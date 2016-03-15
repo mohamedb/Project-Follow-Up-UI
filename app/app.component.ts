@@ -1,22 +1,38 @@
 import {Component} from 'angular2/core';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
 import {NotificationService} from './service';
+import {LoginFormComponent} from './auth/login-form.component';
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>',
-    directives: [],
-    providers: [NotificationService,HTTP_PROVIDERS] 
+    template: `
+    <ul class="my-app">
+        <li>
+            <a [routerLink]="['Login']">Login<i class="fa fa-user"></i></a>	 
+        </li>
+    </ul> 
+     <br>
+    <router-outlet></router-outlet>`,
+    directives: [ROUTER_DIRECTIVES],
+    providers: [ROUTER_PROVIDERS] 
 })
+@RouteConfig([
+    {
+        path: '/Login',
+        name: 'Login',
+        component: LoginFormComponent,
+        useAsDefault: false
+    }])
 export class AppComponent {
      notifs:any;
-    constructor(private notifService:NotificationService){
-        this.load();
+    constructor(){
+       // this.load();
     }
-     
+     /*
     load(){  this.notifService.getAll().subscribe(
                      dataFromServer => this.notifs=dataFromServer,
                      error =>  console.log(JSON.stringify(error))
        );
-    } 
+    } */
  }

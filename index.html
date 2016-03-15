@@ -1,24 +1,36 @@
 <html>
-  <head>
-    <title>Angular 2 QuickStart</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
-   <!--  <link rel="stylesheet" href="styles.css">
+
+<head>
+    <base href="/">
+    <title>PUp Ui</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- App CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <!--  <link rel="stylesheet" href="styles.css">
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
-    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>   
+    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
- 
-	    <script src="node_modules/rxjs/bundles/Rx.umd.js"></script>
-        <script src="node_modules/angular2/bundles/angular2-all.umd.js"></script>
-    <script src="node_modules/angular2/bundles/http.dev.js"></script> 
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.umd.js"></script>
+    <script src="node_modules/angular2/bundles/angular2-all.umd.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
     <!-- 2. Configure SystemJS -->
     <script>
-      System.config({
+        System.config({
       map: {
         rxjs: 'node_modules/rxjs' // added this map section
     },
@@ -30,9 +42,11 @@
       System.import('app/main')
             .then(null, console.error.bind(console));
     </script>
-  </head>
-  <!-- 3. Display the application -->
-  <body>
+</head>
+<!-- 3. Display the application -->
+
+<body>
     <my-app>Loading...</my-app>
-  </body>
+</body>
+
 </html>

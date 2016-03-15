@@ -1,3 +1,5 @@
 /node_modules/*
+/assets/*
 /app/**/*.map
 /app/**/*.js
+*.log
