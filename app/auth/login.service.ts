@@ -11,11 +11,13 @@ export class LoginService {
     check(loginModel:any) {
         var route = "http://localhost:64634/api/AccountApi/Check";
         let objHeader = {
-            "Authorization": "Basic " + btoa(loginModel.username + ":" + loginModel.password) 
+            //"Authorization": "Basic " + btoa(loginModel.username + ":" + loginModel.password) ,
+            accepts: "application/json; charset=utf-8",
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
         }
         let headers = new Headers(objHeader);
         let options = new RequestOptions({ headers: headers });
-        return this.http.get(route,options)
+        return this.http.get(route)
             .map(res => <any>res.json())
             .catch(this.handleError);
     }

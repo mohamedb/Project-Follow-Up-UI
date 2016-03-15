@@ -12,8 +12,8 @@ import {Observable}     from 'rxjs/Observable';
 
 export class LoginFormComponent implements OnInit {
     model: any = {
-        username: "",
-        passworld: "",
+        username: "med",
+        password: "abc",
         rememberMe: false
     };
 
@@ -27,8 +27,8 @@ export class LoginFormComponent implements OnInit {
     }
     handleResponse(response: any) {
         if (response.state == 1) {
-            let auth = "Basic " + btoa(this.model.username + ":" + this.model.password)
-            // Save data to the current local store
+            let auth = "Basic " + btoa(this.model.username + ":" + this.model.password);
+          
             localStorage.setItem("auth", auth);
 
         }
