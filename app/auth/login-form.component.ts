@@ -26,11 +26,12 @@ export class LoginFormComponent implements OnInit {
         )
     }
     handleResponse(response: any) {
-        if (response.state == 1) {
+        if(response=="1"){
             let auth = "Basic " + btoa(this.model.username + ":" + this.model.password);
-          
             localStorage.setItem("auth", auth);
-
-        }
+            console.log("OK: saved to localStorage");
+            return 1;
+        } 
+        console.log("KO!");
     }
 }
