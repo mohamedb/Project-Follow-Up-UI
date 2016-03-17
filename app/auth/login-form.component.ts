@@ -12,8 +12,8 @@ import {Observable}     from 'rxjs/Observable';
 
 export class LoginFormComponent implements OnInit {
     model: any = {
-        username: "med",
-        password: "abc",
+        username: "a@b.c",
+        password: "123*Aa",
         rememberMe: false
     };
 

@@ -4,6 +4,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
 import {NotificationService} from './service';
 import {LoginFormComponent} from './auth/login-form.component';
+import {ListProjectsComponent} from './project/list-projects.component';
 @Component({
     selector: 'my-app',
     template: `
@@ -11,11 +12,14 @@ import {LoginFormComponent} from './auth/login-form.component';
         <li>
             <a [routerLink]="['Login']">Login<i class="fa fa-user"></i></a>	 
         </li>
+        <li>
+            <a [routerLink]="['Projects']">Projects<i class="fa fa-user"></i></a>	 
+        </li>
     </ul> 
      <br>
     <router-outlet></router-outlet>`,
     directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS] 
+    providers: [ROUTER_PROVIDERS]
 })
 @RouteConfig([
     {
@@ -23,16 +27,23 @@ import {LoginFormComponent} from './auth/login-form.component';
         name: 'Login',
         component: LoginFormComponent,
         useAsDefault: false
-    }])
-export class AppComponent {
-     notifs:any;
-    constructor(){
-       // this.load();
+    },
+    {
+        path: '/Projects',
+        name: 'Projects',
+        component: ListProjectsComponent,
+        useAsDefault: true
     }
-     /*
-    load(){  this.notifService.getAll().subscribe(
-                     dataFromServer => this.notifs=dataFromServer,
-                     error =>  console.log(JSON.stringify(error))
-       );
-    } */
- }
+ ])
+export class AppComponent {
+    notifs: any;
+    constructor() {
+        // this.load();
+    }
+    /*
+   load(){  this.notifService.getAll().subscribe(
+                    dataFromServer => this.notifs=dataFromServer,
+                    error =>  console.log(JSON.stringify(error))
+      );
+   } */
+}
