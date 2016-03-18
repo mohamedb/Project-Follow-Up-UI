@@ -3,11 +3,12 @@ import {LoginService} from './login.service';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
+
 @Component({
     selector: 'login-form',
-    templateUrl: 'app/auth/login-form.component.html',  
+    templateUrl: 'app/auth/login-form.component.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [LoginService,ROUTER_PROVIDERS] 
+    providers: [LoginService]
 })
 
 export class LoginFormComponent implements OnInit {
@@ -17,7 +18,7 @@ export class LoginFormComponent implements OnInit {
         rememberMe: false
     };
 
-    constructor(private loginService: LoginService) { }
+    constructor(private loginService: LoginService, private router: Router) { }
     ngOnInit() { }
     login() {
         this.loginService.check(this.model).subscribe(
@@ -26,12 +27,18 @@ export class LoginFormComponent implements OnInit {
         )
     }
     handleResponse(response: any) {
-        if(response=="1"){
+        if (response == "1") {
             let auth = "Basic " + btoa(this.model.username + ":" + this.model.password);
             localStorage.setItem("auth", auth);
             console.log("OK: saved to localStorage");
-            return 1;
-        } 
+            this.goToProjects();
+            return 1; //case navigate fails!
+        }
         console.log("KO!");
+    }
+    
+    goToProjects(){
+         let link = ['Projects',{}];
+         this.router.navigate(link);
     }
 }

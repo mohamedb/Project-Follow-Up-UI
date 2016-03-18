@@ -10,12 +10,8 @@ bootstrap(
     AppComponent,
     [
          ROUTER_PROVIDERS,  
+         provide(LocationStrategy, { useClass: HashLocationStrategy }),
          HTTP_PROVIDERS,    
-         // provide(LocationStrategy,{useClass: HashLocationStrategy}), // .../#/crisis-center/ 
-         // provide(LocationStrategy, {useClass: HashLocationStrategy}),
-         //  provide(APP_BASE_HREF, {useValue: '#'}),
-         //  bind(APP_BASE_HREF).toValue('#'),
-           bind(LocationStrategy).toClass(HashLocationStrategy)
-         // provide(LocationStrategy, {useClass: HashLocationStrategy})
+         
     ]
 ); 

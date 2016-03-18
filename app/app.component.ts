@@ -18,8 +18,7 @@ import {ListProjectsComponent} from './project/list-projects.component';
     </ul> 
      <br>
     <router-outlet></router-outlet>`,
-    directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS]
+    directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
     {
