@@ -9,7 +9,7 @@ export class LoginService {
     constructor(private http: Http) { }
 
     check(loginModel: any) {
-        var route = "http://localhost:64634/api/AccountApi/Check";
+        var route = "http://localhost:64634/api/AccountApi/CheckCredentials";
         let body = JSON.stringify(loginModel);
         let headers = new Headers(
             { "Content-Type": "application/json",

@@ -2,11 +2,15 @@ import {Injectable}     from 'angular2/core';
 import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
 import {Subject} from 'rxjs/Rx';
+import {BaseService} from './../shared/base.service';
 
 @Injectable()
-export class ProjectService {
+export class ProjectService extends BaseService {
 
-    constructor(private http: Http) { }
+    constructor(protected http:Http) {
+        super(http);
+        
+     }
 
     getAll(data: any) {
         console.log("auth: "+localStorage.getItem("auth"));
@@ -20,11 +24,8 @@ export class ProjectService {
         let options = new RequestOptions({ headers: headers });
         return this.http.get(route, options)
             .map(res => <any> res.json())
-            .catch(this.handleError);
+            .catch(super.handleError);
     }
 
-    private handleError(error: Response) {
-        console.log(error);
-        return Observable.throw(error.json().error || 'Server error');
-    }
+    
 }
