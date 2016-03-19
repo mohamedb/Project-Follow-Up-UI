@@ -6,10 +6,11 @@ import {NotificationService} from './service';
 import {LoginFormComponent} from './auth/login-form.component';
 import {ListProjectsComponent} from './project/list-projects.component';
 import {LeftMenuComponent} from './menu/left-menu.component';
+import {TopBarComponent} from "./menu/top-bar.component";
 @Component({
     selector: 'my-app',
     templateUrl: "app/app.component.html",
-    directives: [ROUTER_DIRECTIVES,LeftMenuComponent]
+    directives: [ROUTER_DIRECTIVES,LeftMenuComponent,TopBarComponent]
 })
 @RouteConfig([
     {
