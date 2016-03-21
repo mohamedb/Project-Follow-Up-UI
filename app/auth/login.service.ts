@@ -1,14 +1,17 @@
 import {Injectable}     from 'angular2/core';
+import {BaseService}     from './../shared/base.service';
 import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
 import {Subject} from 'rxjs/Rx';
 
 @Injectable()
-export class LoginService {
+export class LoginService extends BaseService {
 
-    constructor(private http: Http) { }
+    constructor(protected http: Http) {
+        super(http);
+     }
 
-    check(loginModel: any) {
+    login(loginModel: any) {
         var route = "http://localhost:64634/api/AccountApi/CheckCredentials";
         let body = JSON.stringify(loginModel);
         let headers = new Headers(
@@ -22,8 +25,5 @@ export class LoginService {
             .catch(this.handleError);
     }
 
-    private handleError(error: Response) {
-        console.log(error);
-        return Observable.throw(error.json().error || 'Server error');
-    }
+     
 }
