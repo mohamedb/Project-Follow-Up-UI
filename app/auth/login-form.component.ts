@@ -20,10 +20,7 @@ export class LoginFormComponent implements OnInit {
 
     constructor(private loginService: LoginService, private router: Router) { }
     ngOnInit() {
-        if(this.loginService.check()){
-            this.goToProjects();
-        }
-        console.log("aut?"+ this.loginService.check());
+       
      }
     login() {
         this.loginService.login(this.model).subscribe(
