@@ -4,11 +4,42 @@ export class SideMenuHelper {
     $body = $("body");
     $openLeftBtn = $(".open-left");
     $menuItem = $("#sidebar-menu a");
-
+    resizefunc: any = [];
     constructor() {
+        //other
+        $(".nicescroll").niceScroll({ cursorcolor: '#98a6ad', cursorwidth: '6px', cursorborderradius: '5px' });
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('[data-plugin="circliful"]').each(function(idx, obj) {
+            $(this).circliful();
+        });
+
+        FastClick.attach(document.body);
+        this.resizefunc.push("initscrolls");
+        this.resizefunc.push("changeptype");
+
+        $('.animate-number').each(function() {
+            $(this).animateNumbers($(this).attr("data-value"), true, parseInt($(this).attr("data-duration")));
+        });
+
+        //RUN RESIZE ITEMS
+        $(window).resize(this.debounce(this.resizeitems, 100));
+        $("body").trigger("resize");
+
+        // right side-bar toggle
+        $('.right-bar-toggle').on('click', function(e) {
+
+            $('#wrapper').toggleClass('right-bar-enabled');
+        });
+
+
+        //end other
+
         var $this = this;
         var ua = navigator.userAgent,
             event = (ua.match(/iP/i)) ? "touchstart" : "click";
+
+
 
         //bind on click
         this.$openLeftBtn.on(event, function(e) {
@@ -23,7 +54,7 @@ export class SideMenuHelper {
         $("#sidebar-menu ul li.has_sub a.active").parents("li:last").children("a:first").addClass("active").trigger("click");
         console.log("\n**************\nSideMenu.Helper OK:\n*************\n");
     }
-    openLeftBar () {
+    openLeftBar() {
         $("#wrapper").toggleClass("enlarged");
         $("#wrapper").addClass("forced");
 
@@ -43,7 +74,7 @@ export class SideMenuHelper {
         $("body").trigger("resize");
     }
 
-    menuItemClick (e) {
+    menuItemClick(e) {
         if (!$("#wrapper").hasClass("enlarged")) {
             if ($(this).parent().hasClass("has_sub")) {
 
@@ -76,5 +107,27 @@ export class SideMenuHelper {
             $(item).siblings(".slimScrollBar").css("visibility", "visible");
         }
     }
+    debounce(func, wait, immediate = null) {
+        var timeout, result;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                if (!immediate) result = func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) result = func.apply(context, args);
+            return result;
+        };
+    }
+    resizeitems() {
+        if ($.isArray(this.resizefunc)) {
+            for (let i = 0; i < this.resizefunc.length; i++) {
+              //  window[this.resizefunc[i]]();
+
+            }
+        }
+    }
 }
- 
