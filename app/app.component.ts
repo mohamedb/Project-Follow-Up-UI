@@ -1,3 +1,4 @@
+/// <reference path="../typings/main.d.ts" />
 import {Component} from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
@@ -7,6 +8,7 @@ import {LoginFormComponent} from './auth/login-form.component';
 import {ListProjectsComponent} from './project/list-projects.component';
 import {LeftMenuComponent} from './menu/left-menu.component';
 import {TopBarComponent} from "./menu/top-bar.component";
+
 @Component({
     selector: 'my-app',
     templateUrl: "app/app.component.html",
@@ -29,6 +31,9 @@ import {TopBarComponent} from "./menu/top-bar.component";
 export class AppComponent {
     notifs: any;
     constructor() {
+      
+       
     }
+   
    
 }
