@@ -1,5 +1,6 @@
 import {Injectable}     from 'angular2/core';
 import {Http, Response, Headers, RequestOptions} from 'angular2/http';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} from 'angular2/router';
 import {Observable}     from 'rxjs/Observable';
 import {Subject} from 'rxjs/Rx';
 import {BaseService} from './../shared/base.service';
@@ -7,8 +8,8 @@ import {BaseService} from './../shared/base.service';
 @Injectable()
 export class ProjectService extends BaseService {
 
-    constructor(protected http:Http) {
-        super(http);
+    constructor(protected http:Http, protected router:Router) {
+        super(http,router);
         
      }
 

@@ -8,8 +8,8 @@ import {Subject} from 'rxjs/Rx';
 @Injectable()
 export class LoginService extends BaseService {
 
-    constructor(protected http: Http, private router:Router) {
-        super(http);
+    constructor(protected http: Http, protected router:Router) {
+        super(http,router);
      }
 
     login(loginModel: any) {
@@ -25,9 +25,5 @@ export class LoginService extends BaseService {
             .map(res => <any> res.json())
             .catch(this.handleError);
     }
-    goToProjects(){
-         let link = ['Projects',{}];
-         this.router.navigate(link);
-    }
-     
+   
 }

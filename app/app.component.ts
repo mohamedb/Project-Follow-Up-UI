@@ -17,13 +17,13 @@ import {TopBarComponent} from "./menu/top-bar.component";
         path: '/Login',
         name: 'Login',
         component: LoginFormComponent,
-        useAsDefault: false
+        useAsDefault: true
     },
     {
         path: '/Projects',
         name: 'Projects',
         component: ListProjectsComponent,
-        useAsDefault: true
+        useAsDefault: false
     }
  ])
 export class AppComponent {

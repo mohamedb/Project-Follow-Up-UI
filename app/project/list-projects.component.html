@@ -49,7 +49,7 @@
                                 <span *ngIf="project.Over">Completed</span>
                                 <span *ngIf="!project.Over">In progress</span>
                             </div>
-                            <h4 class="m-t-0 m-b-5"><a href="" class="text-inverse">{{project.Project.Name}}</a></h4>
+                            <h4 class="m-t-0 m-b-5"><a href="" class="text-inverse">{{project.Name}}</a></h4>
 
                             <p class="text-success text-uppercase m-b-20 font-13">Web Design</p>
                             <p class="text-muted font-13">
@@ -59,18 +59,18 @@
 
                             <ul class="list-inline">
                                 <li>
-                                    <h3 class="m-b-0">{{project.Project.Tasks.length}}</h3>
+                                    <h3 class="m-b-0">{{project.Tasks.length}}</h3>
                                     <p class="text-muted">Tasks</p>
                                 </li>
                                 <li>
-                                    <h3 class="m-b-0">{{project.Project.Issues.length}}</h3>
+                                    <h3 class="m-b-0">{{project.Issues.length}}</h3>
                                     <p class="text-muted">Issues</p>
                                 </li>
                             </ul>
 
                             <div class="project-members m-b-20">
                                 <span class="m-r-5 font-600">Team :</span>
-                                <a *ngFor="#user of project.Project.Contributors" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="">
+                                <a *ngFor="#user of project.Contributors" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="">
                                     <img src="assets/images/users/avatar-1.jpg" class="img-circle thumb-sm" alt="friend" />{{user.Name}}
                                 </a>
 

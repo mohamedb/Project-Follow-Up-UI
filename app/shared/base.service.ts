@@ -1,6 +1,7 @@
 import {Injectable} from 'angular2/core';
 import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} from 'angular2/router';
 import {Subject} from 'rxjs/Rx';
 /**
 *
@@ -10,12 +11,17 @@ import {Subject} from 'rxjs/Rx';
 @Injectable()
 export class BaseService {
     isAuth=false;
-    constructor(protected http: Http) { 
+    constructor(protected http: Http, protected  router:Router) { 
         this.check();
     }
     check():boolean {
         var route = "http://localhost:64634/api/AccountApi/Verify";
         let body = JSON.stringify("");
+        if(!localStorage.getItem("auth")){
+            console.log("No auth obj! ");
+            this.logout();
+            return false;
+        }
         let headers = new Headers(
             { "Content-Type": "application/json",
                "Authorization": localStorage.getItem("auth"),
@@ -25,7 +31,7 @@ export class BaseService {
         let response= this.http.post(route, body, options)
             .map(res => <any> res.json())
             .catch(this.handleError);
-       response.subscribe(resp=>this.handleAuthServerResponse(resp));
+       response.subscribe(resp=>this.handleAuthServerResponse(resp),this.handleError);
        return this.isAuth;
     }
     
@@ -40,7 +46,21 @@ export class BaseService {
         //redirect user to login page!
     }
     protected handleError(error: Response) {
-        console.log(error);
+        console.log("Some problem from the server :/ ! "+error);
         return Observable.throw(error.json().error || 'Server error');
     }
+    
+     goToProjects(){
+         let link = ['Projects',{}];
+         this.router.navigate(link);
+    }
+    logout(){
+       
+            localStorage.removeItem("auth");
+            let link = ['Login',{}];
+             
+            this.router.navigate(link);
+        
+    }
+    
 }

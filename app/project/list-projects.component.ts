@@ -18,7 +18,6 @@ export class ListProjectsComponent implements OnInit {
      }
      handleResponse(resp:any){
          let json = JSON.parse(resp);
-          
          this.projects=json;
          
      }
