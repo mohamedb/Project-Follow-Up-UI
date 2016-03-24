@@ -1,5 +1,5 @@
 interface JQuery {
-    niceScroll(v:any):any;
+    niceScroll(v:any,w?:any ):any;
     tooltip():any;
     slider(v:any):any;
     circliful():any;

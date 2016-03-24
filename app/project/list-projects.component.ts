@@ -4,12 +4,15 @@ import {ProjectService} from "./project.service"
 @Component({
     selector: 'list-projects',
     templateUrl: 'app/project/list-projects.component.html',
-    providers: [ProjectService]
+    providers: [ProjectService],
+    styles:[` `]
 })
 
 export class ListProjectsComponent implements OnInit {
     projects:any=[];
-    constructor(private projectService:ProjectService) { }
+    constructor(private projectService:ProjectService) {
+       
+     }
 
     ngOnInit() {
         this.projectService.getAll("").subscribe(

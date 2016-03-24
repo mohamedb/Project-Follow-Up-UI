@@ -1,0 +1,15 @@
+.notification-box{
+    padding: 24px;
+}
+.notification-box .pulse {
+    right: 7px;
+    top: 12px;
+}
+.notification-box .dot {
+    top: 0px;
+}
+list-projects{ padding: 1px;} 
+.app-main-container{
+        max-height: 85%;
+        overflow-y: scroll;
+}
