@@ -32,9 +32,7 @@ import {RightBarComponent} from "./menu/right-bar.component";
 export class AppComponent {
     notifs: any;
     constructor() {
-       $(document).ready(function() {  
-             $(".app-main-container").niceScroll({cursorcolor:"#78909C"});
-        });
+      
        
     }
    

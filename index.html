@@ -40,7 +40,7 @@
     <script src="node_modules/rxjs/bundles/Rx.umd.js"></script>
     <script src="node_modules/angular2/bundles/angular2-all.umd.js"></script>
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
-    
+
     <!-- 2. Configure SystemJS -->
     <script>
         System.config({
@@ -59,16 +59,16 @@
 <!-- 3. Display the application -->
 
 <body class="fixed-left">
-    
-    
+
+
     <my-app>Loading...</my-app>
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     <script>
         var resizefunc = [];
     </script>
@@ -87,6 +87,13 @@
     <!-- App js -->
     <script src="assets/js/jquery.core.js"></script>
     <script src="assets/js/jquery.app.js"></script>
+
+    <script>
+        $(document).ready(function() {  
+             $("#appMainId").niceScroll({cursorcolor:"#78909C"});
+        });
+    </script>
+
 </body>
 
 </html>
