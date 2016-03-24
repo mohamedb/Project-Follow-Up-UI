@@ -8,11 +8,12 @@ import {LoginFormComponent} from './auth/login-form.component';
 import {ListProjectsComponent} from './project/list-projects.component';
 import {LeftMenuComponent} from './menu/left-menu.component';
 import {TopBarComponent} from "./menu/top-bar.component";
+import {RightBarComponent} from "./menu/right-bar.component";
 
 @Component({
     selector: 'my-app',
     templateUrl: "app/app.component.html",
-    directives: [ROUTER_DIRECTIVES,LeftMenuComponent,TopBarComponent]
+    directives: [ROUTER_DIRECTIVES,LeftMenuComponent,TopBarComponent,RightBarComponent]
 })
 @RouteConfig([
     {
