@@ -3,6 +3,7 @@ import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} from 'angular2/router';
 import {Subject} from 'rxjs/Rx';
+import {AppRouteConst} from "./app.const"
 /**
 *
 *Base class for services that need auth, the credentials are checked
@@ -15,7 +16,7 @@ export class BaseService {
         this.check();
     }
     check():boolean {
-        var route = "http://localhost:64634/api/AccountApi/Verify";
+        
         let body = JSON.stringify("");
         if(!localStorage.getItem("auth")){
             console.log("No auth obj! ");
@@ -28,7 +29,7 @@ export class BaseService {
               "accepts": "application/json; charset=utf-8",
             });
         let options = new RequestOptions({ headers: headers });
-        let response= this.http.post(route, body, options)
+        let response= this.http.post(AppRouteConst.VERIFY, body, options)
             .map(res => <any> res.json())
             .catch(this.handleError);
        response.subscribe(resp=>this.handleAuthServerResponse(resp),this.handleError);

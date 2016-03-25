@@ -4,6 +4,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} fro
 import {Observable}     from 'rxjs/Observable';
 import {Subject} from 'rxjs/Rx';
 import {BaseService} from './../shared/base.service';
+import {AppRouteConst} from './../shared/app.const';
 import {ProjectModel} from "./project.model";
 @Injectable()
 export class ProjectService extends BaseService {
@@ -15,7 +16,6 @@ export class ProjectService extends BaseService {
 
     getAll(data: any) {
         console.log("auth: "+localStorage.getItem("auth"));
-        var route = "http://localhost:64634/api/ProjectApi/List";
         //let body = JSON.stringify(data);
         let headers = new Headers(
             { "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export class ProjectService extends BaseService {
               "accepts": "application/json",
             });
         let options = new RequestOptions({ headers: headers });
-        return this.http.get(route, options)
+        return this.http.get(AppRouteConst.LIST_PROJECT, options)
             .map(res => <any> res.json())
             .catch(super.handleError);
     }
@@ -37,7 +37,7 @@ export class ProjectService extends BaseService {
               "accepts": "application/json; charset=utf-8",
             });
         let options = new RequestOptions({ headers: headers });
-        return this.http.post(route, body, options)
+        return this.http.post(AppRouteConst.ADD_PROJECT, body, options)
             .map(res => <any> res.json())
             .catch(this.handleError);
         

@@ -4,6 +4,7 @@ import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} from 'angular2/router';
 import {Subject} from 'rxjs/Rx';
+import {AppRouteConst} from "./../shared/app.const"
 
 @Injectable()
 export class LoginService extends BaseService {
@@ -13,7 +14,7 @@ export class LoginService extends BaseService {
      }
 
     login(loginModel: any) {
-        var route = "http://localhost:64634/api/AccountApi/CheckCredentials";
+       
         let body = JSON.stringify(loginModel);
         let headers = new Headers(
             { "Content-Type": "application/json",
@@ -21,7 +22,7 @@ export class LoginService extends BaseService {
               "accepts": "application/json; charset=utf-8",
             });
         let options = new RequestOptions({ headers: headers });
-        return this.http.post(route, body, options)
+        return this.http.post(AppRouteConst.CHECK_CREDENTIALS, body, options)
             .map(res => <any> res.json())
             .catch(this.handleError);
     }
