@@ -4,7 +4,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} fro
 import {Observable}     from 'rxjs/Observable';
 import {Subject} from 'rxjs/Rx';
 import {BaseService} from './../shared/base.service';
-
+import {ProjectModel} from "./project.model";
 @Injectable()
 export class ProjectService extends BaseService {
 
@@ -26,6 +26,21 @@ export class ProjectService extends BaseService {
         return this.http.get(route, options)
             .map(res => <any> res.json())
             .catch(super.handleError);
+    }
+    
+    saveProject(project:ProjectModel){
+        var route = "http://localhost:64634/api/ProjectApi/Add";
+        let body = JSON.stringify(project);
+        let headers = new Headers(
+            { "Content-Type": "application/json",
+              "Authorization": localStorage.getItem("auth"),
+              "accepts": "application/json; charset=utf-8",
+            });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post(route, body, options)
+            .map(res => <any> res.json())
+            .catch(this.handleError);
+        
     }
 
     

@@ -1,21 +1,20 @@
 import {Component, OnInit} from 'angular2/core';
 import {ProjectModel } from './../project.model';
-
+import {ProjectService} from './../project.service'
 @Component({
     selector: 'form-project',
-    templateUrl: 'app/project/form/form-project.component.html'
+    templateUrl: 'app/project/form/form-project.component.html',
+    providers: [ProjectService]
 })
 
 export class FormProjectComponent implements OnInit {
-    projectModel: ProjectModel = new ProjectModel();
-    ariaStat: any = [true, false, false];
-    constructor() { }
+    projectModel:ProjectModel= new ProjectModel();
+    constructor(private projetService:ProjectService) { }
     ngOnInit() { }
-
-    updateAria(idAria: any) {
-        for (let i = 0; i < this.ariaStat.length; i++) {
-            this.ariaStat[i] = false;
-        }
-        this.ariaStat[idAria] = true;
+    
+    save(){
+        this.projetService.saveProject(this.projectModel).subscribe(
+            response=>console.log(JSON.stringify(response))
+        );
     }
 }

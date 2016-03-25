@@ -9,10 +9,9 @@
 export class ProjectModel {
 
     id: number = 0;
-    name:string;
-    startAt:any = new Date();
-    endAt:any= new Date();
-    benifite:string;
-    objective:string;
-    
+    name: string;
+    startAt: any = new Date(Date.now() + 1* 24*60*60*1000 );//Add one day!
+    endAt: any = new Date(Date.now() + 5* 24*60*60*1000 );
+    benifite: string = ` `;
+    objective: string = ` `;
 }
