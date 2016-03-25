@@ -6,6 +6,7 @@ import {Observable}     from 'rxjs/Observable';
 import {NotificationService} from './service';
 import {LoginFormComponent} from './auth/login-form.component';
 import {ListProjectsComponent} from './project/list-projects.component';
+import {FormProjectComponent} from './project/form/form-project.component';
 import {LeftMenuComponent} from './menu/left-menu.component';
 import {TopBarComponent} from "./menu/top-bar.component";
 import {RightBarComponent} from "./menu/right-bar.component";
@@ -27,7 +28,13 @@ import {RightBarComponent} from "./menu/right-bar.component";
         name: 'Projects',
         component: ListProjectsComponent,
         useAsDefault: false
-    }
+    },
+    {
+        path: '/Add-Project',
+        name: 'AddProject',
+        component: FormProjectComponent,
+        useAsDefault: false
+    }  
  ])
 export class AppComponent {
     notifs: any;
