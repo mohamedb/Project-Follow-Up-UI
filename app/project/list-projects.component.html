@@ -30,8 +30,8 @@
     <!-- end col-->
 </div>
 <!-- end row -->
-<div class="row" *ngFor="#project of projects">
-    <div class="col-lg-4">
+<div class="row">
+    <div  *ngFor="#project of projects" class="col-lg-4">
         <div class="card-box project-box">
             <div class="label label-default" [ngClass]="{'label-success': project.Over }">
                 <span *ngIf="project.Over">Completed</span>
