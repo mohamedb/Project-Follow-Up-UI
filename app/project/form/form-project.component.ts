@@ -13,7 +13,7 @@ export class FormProjectComponent implements OnInit {
     constructor(private projetService:ProjectService, private routeParams: RouteParams) { }
     ngOnInit() {
           let id = +this.routeParams.get('id');
-          this.projectModel.id=id;
+          this.projectModel.Id=id;
           if(id>0){
               this.projetService.getProjectViewModel(id).subscribe(
                   response=>this.initModel(response)

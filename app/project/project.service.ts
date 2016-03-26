@@ -30,13 +30,12 @@ export class ProjectService extends BaseService {
     
     saveProject(project:ProjectModel){
         let body = JSON.stringify(project);
-        let headers = new Headers(
-            { "Content-Type": "application/json",
-              "Authorization": localStorage.getItem("auth"),
-              "accepts": "application/json; charset=utf-8",
-            });
-        let options = new RequestOptions({ headers: headers });
-        return this.http.post(AppRouteConst.ADD_PROJECT, body, options)
+         
+        let route= AppRouteConst.ADD_PROJECT;
+        if(project.Id>0){
+            route= AppRouteConst.EDIT_PROJECT;
+        }
+        return this.http.post(route, body, this.getReqOptions())
             .map(res => <any> res.json())
             .catch(this.handleError);
         
