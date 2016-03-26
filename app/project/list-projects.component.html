@@ -72,6 +72,7 @@
                 <!-- /.progress-bar .progress-bar-danger -->
             </div>
             <!-- /.progress .no-rounded -->
+             <a [routerLink]="['Taskboard',{projectId: project.Id}]" type="button" class="btn  waves-effect waves-light">Tasks</a>
              <a [routerLink]="['AddProject',{id: project.Id}]" type="button" class="btn  waves-effect waves-light">Edit</a>
         </div>
     </div>

@@ -10,6 +10,7 @@ import {FormProjectComponent} from './project/form/form-project.component';
 import {LeftMenuComponent} from './menu/left-menu.component';
 import {TopBarComponent} from "./menu/top-bar.component";
 import {RightBarComponent} from "./menu/right-bar.component";
+import {TaskboardComponent} from "./taskboard/taskboard.component";
 
 @Component({
     selector: 'my-app',
@@ -27,14 +28,18 @@ import {RightBarComponent} from "./menu/right-bar.component";
         path: '/Projects',
         name: 'Projects',
         component: ListProjectsComponent,
-        useAsDefault: false
     },
     {
         path: '/Add-Project/:id', /* Add,id=0|Edit, id>0 */
         name: 'AddProject',
         component: FormProjectComponent,
-        useAsDefault: false
-    }  
+    } 
+    ,
+    {
+        path: '/Taskboard/:projectId',  
+        name: 'Taskboard',
+        component: TaskboardComponent,
+    } 
  ])
 export class AppComponent {
     notifs: any;

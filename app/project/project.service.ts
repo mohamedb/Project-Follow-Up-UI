@@ -11,19 +11,12 @@ export class ProjectService extends BaseService {
 
     constructor(protected http:Http, protected router:Router) {
         super(http,router);
-        
      }
 
     getAll(data: any) {
         console.log("auth: "+localStorage.getItem("auth"));
         //let body = JSON.stringify(data);
-        let headers = new Headers(
-            { "Content-Type": "application/json",
-              "Authorization": localStorage.getItem("auth"),
-              "accepts": "application/json",
-            });
-        let options = new RequestOptions({ headers: headers });
-        return this.http.get(AppRouteConst.LIST_PROJECT, options)
+        return this.http.get(AppRouteConst.LIST_PROJECT, this.getReqOptions())
             .map(res => <any> res.json())
             .catch(super.handleError);
     }
@@ -32,7 +25,7 @@ export class ProjectService extends BaseService {
         let body = JSON.stringify(project);
          
         let route= AppRouteConst.ADD_PROJECT;
-        if(project.Id>0){
+        if(project.Id>0){ //Edit case
             route= AppRouteConst.EDIT_PROJECT;
         }
         return this.http.post(route, body, this.getReqOptions())

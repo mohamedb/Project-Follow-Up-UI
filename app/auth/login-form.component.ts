@@ -33,14 +33,10 @@ export class LoginFormComponent implements OnInit {
             let auth = "Basic " + btoa(this.model.username + ":" + this.model.password);
             localStorage.setItem("auth", auth);
             console.log("OK: saved to localStorage");
-            this.goToProjects();
+            this.loginService.goToProjects();
             return 1; //case navigate fails!
         }
         console.log("KO!");
     }
-     
-    goToProjects(){
-         let link = ['Projects',{}];
-         this.router.navigate(link);
-    }
+ 
 }
