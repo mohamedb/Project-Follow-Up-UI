@@ -24,4 +24,9 @@ export class AppRouteConst {
      * Notification routes 
      */
     static LIST_NOTIFICATION= AppRouteConst.BASE_URL+"/NotificationApi/all";
+    
+    /**
+     * Task routes 
+     */
+    static TASKBOARD_TASK= AppRouteConst.BASE_URL+"/TaskApi/Taskboard";
 }
