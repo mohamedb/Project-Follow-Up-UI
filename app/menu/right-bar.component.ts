@@ -24,4 +24,8 @@ export class RightBarComponent implements OnInit {
          this.notifications=json;
          
      }
+     
+     refresh(){
+         this.ngOnInit();
+     }
 }

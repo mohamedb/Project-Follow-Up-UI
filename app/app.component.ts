@@ -30,7 +30,7 @@ import {RightBarComponent} from "./menu/right-bar.component";
         useAsDefault: false
     },
     {
-        path: '/Add-Project',
+        path: '/Add-Project/:id', /* Add,id=0|Edit, id>0 */
         name: 'AddProject',
         component: FormProjectComponent,
         useAsDefault: false

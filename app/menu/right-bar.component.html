@@ -3,7 +3,8 @@
     <a href="javascript:void(0);" class="right-bar-toggle">
         <i class="zmdi zmdi-close-circle-o"></i>
     </a>
-    <h4 class="">Notifications</h4>
+    
+    <h4 class="">Notifications &nbsp; <i class="fa fa-refresh" (click)="refresh()" style="cursor:pointer"></i></h4>
     <div class="notification-list nicescroll">
         <ul class="list-group list-no-border user-list">
             <li *ngFor="#notif of notifications" class="list-group-item">
@@ -13,7 +14,7 @@
                     </div>
 
                     <div class="user-desc">
-                        <span class="name">Michael Zenaty</span>
+                        <span class="name">Med Bllz</span>
                         <span class="desc">{{notif.Message}}</span>
                         <span class="time">{{notif.TimeAgo}}</span>
                     </div>

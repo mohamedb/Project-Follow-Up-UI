@@ -36,6 +36,16 @@ export class BaseService {
        return this.isAuth;
     }
     
+    getReqOptions():RequestOptions{
+        let headers = new Headers(
+            { "Content-Type": "application/json",
+              "Authorization": localStorage.getItem("auth"),
+              "accepts": "application/json; charset=utf-8",
+            });
+        let options = new RequestOptions({ headers: headers });
+        return options
+    }
+    
     private handleAuthServerResponse(response){
         if(response=="1"){
             //nice!

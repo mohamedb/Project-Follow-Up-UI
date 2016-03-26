@@ -5,6 +5,11 @@ export class AppRouteConst {
      */
     static ADD_PROJECT = AppRouteConst.BASE_URL + "/ProjectApi/Add";
     static LIST_PROJECT = AppRouteConst.BASE_URL + "/ProjectApi/List";
+    /**
+     * Accepts: projectView as agrgument for Save,  Method: Post
+     * Accepts: projectId:int as argument for fetch,Method: Get 
+     */
+    static EDIT_PROJECT = AppRouteConst.BASE_URL + "/ProjectApi/Edit";
 
     /**
      * Auth routes 

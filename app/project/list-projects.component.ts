@@ -25,10 +25,4 @@ export class ListProjectsComponent implements OnInit {
          this.projects=json;
          
      }
-     isCompleted(project:any){
-         let now= new Date();
-         let e= new Date(project.EndAt);
-         console.log("s:"+now + "e: "+e);
-         return e<now;
-     }
 }

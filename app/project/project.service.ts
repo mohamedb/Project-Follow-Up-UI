@@ -29,7 +29,6 @@ export class ProjectService extends BaseService {
     }
     
     saveProject(project:ProjectModel){
-        var route = "http://localhost:64634/api/ProjectApi/Add";
         let body = JSON.stringify(project);
         let headers = new Headers(
             { "Content-Type": "application/json",
@@ -42,6 +41,12 @@ export class ProjectService extends BaseService {
             .catch(this.handleError);
         
     }
-
+    
+    getProjectViewModel(id:number){
+       return this.http.get(AppRouteConst.EDIT_PROJECT+"?id="+id, this.getReqOptions())
+            .map(res => <any> res.json())
+            .catch(this.handleError); 
+    }
+    
     
 }

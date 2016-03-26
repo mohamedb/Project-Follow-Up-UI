@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-4">
-        <a [routerLink]="['AddProject']" type="button" class="btn btn-purple btn-rounded w-md waves-effect waves-light m-b-20">Create Project</a>
+        <a [routerLink]="['AddProject',{id:0}]" type="button" class="btn btn-purple btn-rounded w-md waves-effect waves-light m-b-20">Create Project</a>
     </div>
     <div class="col-sm-8">
         <div class="project-sort pull-right">
@@ -72,6 +72,7 @@
                 <!-- /.progress-bar .progress-bar-danger -->
             </div>
             <!-- /.progress .no-rounded -->
+             <a [routerLink]="['AddProject',{id: project.Id}]" type="button" class="btn  waves-effect waves-light">Edit</a>
         </div>
     </div>
     <!-- end col-->
