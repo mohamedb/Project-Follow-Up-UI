@@ -11,6 +11,7 @@ import {LeftMenuComponent} from './menu/left-menu.component';
 import {TopBarComponent} from "./menu/top-bar.component";
 import {RightBarComponent} from "./menu/right-bar.component";
 import {TaskboardComponent} from "./taskboard/taskboard.component";
+import {TimelineComponent} from "./timeline/timeline.component";
 
 @Component({
     selector: 'my-app',
@@ -39,6 +40,12 @@ import {TaskboardComponent} from "./taskboard/taskboard.component";
         path: '/Taskboard/:projectId',  
         name: 'Taskboard',
         component: TaskboardComponent,
+    } 
+    ,
+    {
+        path: '/Timeline/:projectId',  
+        name: 'Timeline',
+        component: TimelineComponent,
     } 
  ])
 export class AppComponent {

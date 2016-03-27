@@ -73,7 +73,9 @@
             </div>
             <!-- /.progress .no-rounded -->
              <a [routerLink]="['Taskboard',{projectId: project.Id}]" type="button" class="btn  waves-effect waves-light">Tasks</a>
+             <a [routerLink]="['Timeline',{projectId: project.Id}]" type="button" class="btn  waves-effect waves-light">Timeline</a>
              <a [routerLink]="['AddProject',{id: project.Id}]" type="button" class="btn  waves-effect waves-light">Edit</a>
+             
         </div>
     </div>
     <!-- end col-->

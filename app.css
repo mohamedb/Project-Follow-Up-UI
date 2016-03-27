@@ -13,3 +13,7 @@ list-projects{ padding: 1px;}
         max-height: 85%;
         overflow-y: scroll;
 }
+
+.timeline:before {
+    width: 2px;    
+}
