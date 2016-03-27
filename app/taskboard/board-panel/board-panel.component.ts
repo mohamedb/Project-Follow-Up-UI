@@ -6,8 +6,8 @@ import {Component, OnInit, Input} from 'angular2/core';
 })
 
 export class BoardPanelComponent implements OnInit {
-    @Input('tasks') Tasks:any=[];
-    @Input('title') Title:any=[];
+    @Input('Tasks') Tasks:any=[];
+    @Input('Title') Title:any="";
     constructor() { }
 
     ngOnInit() { }
