@@ -9,6 +9,8 @@ import {TaskboardService} from "./taskboard.service";
 
 export class TaskboardComponent implements OnInit {
     Upcoming:any= [];
+    Complete:any= [];
+    InProgress:any= [];
     constructor(private taskboardService:TaskboardService, private routeParams: RouteParams ) { }
 
     ngOnInit() {
@@ -16,5 +18,12 @@ export class TaskboardComponent implements OnInit {
         this.taskboardService.getTaskboard(projectId).subscribe(
             resp=>this.Upcoming=JSON.parse(resp).Upcoming
         );
+     }
+     
+     handleResponse(response){
+         let jsonResponse= JSON.parse(response);
+         this.Upcoming=jsonResponse.Upcoming;
+         this.Complete= jsonResponse.Complete;
+         this.InProgress= jsonResponse.InProgress;
      }
 }
