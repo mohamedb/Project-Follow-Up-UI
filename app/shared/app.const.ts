@@ -19,14 +19,18 @@ export class AppRouteConst {
      */
     static CHECK_CREDENTIALS = AppRouteConst.BASE_URL + "/AccountApi/CheckCredentials";
     static VERIFY = AppRouteConst.BASE_URL + "/AccountApi/Verify";
-    
+
     /**
      * Notification routes 
      */
-    static LIST_NOTIFICATION= AppRouteConst.BASE_URL+"/NotificationApi/all";
-    
+    static LIST_NOTIFICATION = AppRouteConst.BASE_URL + "/NotificationApi/all";
+
     /**
      * Task routes 
      */
-    static TASKBOARD_TASK= AppRouteConst.BASE_URL+"/TaskApi/Taskboard";
+    static TASKBOARD_TASK = AppRouteConst.BASE_URL + "/TaskApi/Taskboard";
+    /**
+     * Task routes 
+     */
+    static BYPROJECT_TIMELINE = AppRouteConst.BASE_URL + "/TimelineApi/ByProject";
 }
