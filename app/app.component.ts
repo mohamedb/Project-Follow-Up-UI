@@ -17,6 +17,9 @@ import {TimelineComponent} from "./timeline/timeline.component";
     selector: 'my-app',
     templateUrl: "app/app.component.html",
     directives: [ROUTER_DIRECTIVES,LeftMenuComponent,TopBarComponent,RightBarComponent]
+    /*styleUrls: [  
+     "./../assets/css/core.css" , "./../assets/css/components.css", 
+     "./../assets/css/pages.css" , "./../assets/css/menu.css","./../assets/css/responsive.css" , "./../app.css"  ]*/
 })
 @RouteConfig([
     {

@@ -1,0 +1,24 @@
+<div class="panel">
+    <div class="panel-body">
+        <span class="arrow-alt"></span>
+        <span class="timeline-icon bg-danger"><i class="zmdi zmdi-circle"></i></span>
+        <h4 class="text-primary">{{element.TimeAgo}}</h4>
+        <p class="timeline-date text-muted"><small>08:25 am</small></p>
+
+        <div [ngSwitch]="element.Type">
+
+            <template ngSwitchWhen="Task">
+                 <p> <i class="fa fa-tasks"></i> {{element.Title}} </p>
+            </template>
+            
+            <template ngSwitchWhen="Issue">
+                 <p> <i class="fa fa-exclamation-circle"></i> {{element.Description}} </p>
+            </template>
+            
+            <template ngSwitchDefault>
+                <p><i class="fa fa-info-circle"></i> {{element.Message}} </p>
+            </template>
+        </div>
+ 
+    </div>
+</div>
