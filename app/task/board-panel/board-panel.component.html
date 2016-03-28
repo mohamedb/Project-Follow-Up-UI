@@ -27,9 +27,8 @@
 
                     <div class="kanban-detail">
                         <span *ngIf="task.Urgent" class="label label-danger pull-right">Urgent</span> &nbsp; &nbsp;
-                        <span
-                        *ngIf="task.Critical" class="label label-danger pull-right">Critical</span>
-                            <h4><a href="">{{task.Title}}</a> </h4>
+                        <span *ngIf="task.Critical" class="label label-danger pull-right">Critical</span>
+                            <h4><a  [routerLink]="['TaskDetails',{taskId: task.Id}]"   >{{task.Title}}</a> </h4>
                             <ul class="list-inline m-b-0">
                                 <li>
                                     <a href="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Username">

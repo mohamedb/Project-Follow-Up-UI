@@ -10,8 +10,9 @@ import {FormProjectComponent} from './project/form/form-project.component';
 import {LeftMenuComponent} from './menu/left-menu.component';
 import {TopBarComponent} from "./menu/top-bar.component";
 import {RightBarComponent} from "./menu/right-bar.component";
-import {TaskboardComponent} from "./taskboard/taskboard.component";
+import {TaskboardComponent} from "./task/taskboard/taskboard.component";
 import {TimelineComponent} from "./timeline/timeline.component";
+import {TaskDetailsComponent} from "./task/task-details/task-details.component";
 
 @Component({
     selector: 'my-app',
@@ -49,6 +50,12 @@ import {TimelineComponent} from "./timeline/timeline.component";
         path: '/Timeline/:projectId',  
         name: 'Timeline',
         component: TimelineComponent,
+    }
+    ,
+    {
+        path: '/Task/Details/:taskId',  
+        name: 'TaskDetails',
+        component: TaskDetailsComponent,
     } 
  ])
 export class AppComponent {

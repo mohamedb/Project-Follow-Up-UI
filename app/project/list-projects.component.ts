@@ -5,7 +5,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} fro
     selector: 'list-projects',
     templateUrl: 'app/project/list-projects.component.html',
     providers: [ProjectService],
-     directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES],
     styles:[` `]
 })
 

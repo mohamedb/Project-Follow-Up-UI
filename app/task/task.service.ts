@@ -7,14 +7,14 @@ import {BaseService} from './../shared/base.service';
 import {AppRouteConst} from './../shared/app.const';
 
 @Injectable()
-export class TaskboardService extends BaseService {
+export class TaskService extends BaseService {
 
     constructor(protected http:Http, protected router:Router) {
         super(http,router);
      }
 
-    getTaskboard(projectId:number) {       
-        return this.http.get(AppRouteConst.TASKBOARD_TASK+"?id="+projectId, this.getReqOptions())
+    getTask(taskId:number) {       
+        return this.http.get(AppRouteConst.TASKBOARD_TASK+"?id="+taskId, this.getReqOptions())
             .map(res => <any> res.json())
             .catch(super.handleError);
     }

@@ -1,10 +1,10 @@
 import {Component, OnInit} from 'angular2/core';
 import {RouteParams,Router} from 'angular2/router';
 import {TaskboardService} from "./taskboard.service";
-import {BoardPanelComponent } from "./board-panel/board-panel.component";
+import {BoardPanelComponent } from "./../board-panel/board-panel.component";
 @Component({
     selector: 'taskboard',
-    templateUrl: 'app/taskboard/taskboard.component.html',
+    templateUrl: 'app/task/taskboard/taskboard.component.html',
     providers: [TaskboardService],
     directives: [BoardPanelComponent]
 })
