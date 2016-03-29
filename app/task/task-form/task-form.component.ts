@@ -4,7 +4,7 @@ import {TaskService} from './../task.service';
 import {TaskModel} from './../task.model';
 @Component({
     selector: 'task-form',
-    templateUrl: 'app/task/task-form.component.html',
+    templateUrl: 'app/task/task-form/task-form.component.html',
      providers: [TaskService],
 })
 
