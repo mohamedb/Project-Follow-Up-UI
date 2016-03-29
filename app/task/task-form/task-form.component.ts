@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from 'angular2/core';
 import {RouteParams,Router} from 'angular2/router';
 import {TaskService} from './../task.service';
+import {TaskModel} from './../task.model';
 @Component({
     selector: 'task-form',
     templateUrl: 'app/task/task-form.component.html',
@@ -8,7 +9,7 @@ import {TaskService} from './../task.service';
 })
 
 export class TaskFormComponent implements OnInit {
-    taskModel:any= {};
+    taskModel:TaskModel= new TaskModel();
  
      constructor(private taskService:TaskService, private routeParams: RouteParams ) { }
 

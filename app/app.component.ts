@@ -13,6 +13,7 @@ import {RightBarComponent} from "./menu/right-bar.component";
 import {TaskboardComponent} from "./task/taskboard/taskboard.component";
 import {TimelineComponent} from "./timeline/timeline.component";
 import {TaskDetailsComponent} from "./task/task-details/task-details.component";
+import {TaskFormComponent} from "./task/task-form/task-form.component";
 
 @Component({
     selector: 'my-app',
@@ -57,6 +58,12 @@ import {TaskDetailsComponent} from "./task/task-details/task-details.component";
         name: 'TaskDetails',
         component: TaskDetailsComponent,
     } 
+    ,
+    {
+        path: '/Task/Add/:projectId',  
+        name: 'AddTask',
+        component: TaskFormComponent,
+    }
  ])
 export class AppComponent {
     notifs: any;
