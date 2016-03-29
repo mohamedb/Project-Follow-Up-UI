@@ -8,16 +8,18 @@ import {TaskService} from './../task.service';
 })
 
 export class TaskDetailsComponent implements OnInit {
-
+     task:any= {};
+ 
      constructor(private taskService:TaskService, private routeParams: RouteParams ) { }
 
     ngOnInit() {
-        let taskId = +this.routeParams.get('projectId');
-       /* this.taskService.getTask(taskId).subscribe(
+        let taskId = +this.routeParams.get('taskId');
+        this.taskService.getTask(taskId).subscribe(
             response=>this.handleResponse(response)
-        ) */
+        )  
      }
      handleResponse(response){
          let jsonResponse= JSON.parse(response);
+         this.task=jsonResponse;
      }
 }

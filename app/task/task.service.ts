@@ -14,7 +14,7 @@ export class TaskService extends BaseService {
      }
 
     getTask(taskId:number) {       
-        return this.http.get(AppRouteConst.TASKBOARD_TASK+"?id="+taskId, this.getReqOptions())
+        return this.http.get(AppRouteConst.GET_TASK+"?id="+taskId, this.getReqOptions())
             .map(res => <any> res.json())
             .catch(super.handleError);
     }

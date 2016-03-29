@@ -28,6 +28,7 @@ export class AppRouteConst {
     /**
      * Task routes 
      */
+    static GET_TASK = AppRouteConst.BASE_URL + "/TaskApi/Get";
     static TASKBOARD_TASK = AppRouteConst.BASE_URL + "/TaskApi/Taskboard";
     /**
      * Task routes 
