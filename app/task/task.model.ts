@@ -17,7 +17,16 @@ export class TaskModel {
     EndAt: string;
     DeleteAt: string;
     Deleted: boolean;
-    Executor: number;
-    Project: number;
+    ExecutorId: number;
+    ProjectId: number;
     EditAt: string;
+    
+    //Addtional 
+    UsersList:any=[];
+    ImportantList:any=[];
+    UrgentList :any=[];
+    EstimatedMinList :any = [];
+    AvailableDates:any=[];
+    
+    
 }
