@@ -10,12 +10,31 @@ import {TaskModel} from './../task.model';
 
 export class TaskFormComponent implements OnInit {
     taskModel:TaskModel= new TaskModel();
+    usersList:any=[];
  
      constructor(private taskService:TaskService, private routeParams: RouteParams ) { }
 
     ngOnInit() {
         let projectId = +this.routeParams.get('projectId');
-        console.log(projectId) ;
+        this.taskService.getTaskModel(projectId).subscribe(
+            res=>this.handleResponse(res)
+        );
      }
-      
+    handleResponse(response)  {
+        let model =JSON.parse(response);
+        this.usersList= Array.from(model.UsersList);
+        this.taskModel = model;
+         this.usersList=Array.from( model.UsersList);  
+         console.log(this.usersList)
+         
+    }
+    
+    /**
+     * Temporary solution to the problem of nested data inside a ngFor
+     * @see https://github.com/angular/angular/issues/6392
+     */
+    workAround(data){
+        return Array.from(data);
+    }
+    
 }
