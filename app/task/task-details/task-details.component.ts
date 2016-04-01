@@ -14,7 +14,7 @@ export class TaskDetailsComponent implements OnInit {
 
     ngOnInit() {
         let taskId = +this.routeParams.get('taskId');
-        this.taskService.getTask(taskId).subscribe(
+        this.taskService.getTaskEntity(taskId).subscribe(
             response=>this.handleResponse(response)
         )  
      }

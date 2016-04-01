@@ -24,8 +24,8 @@ export class TaskFormComponent implements OnInit {
         let model =JSON.parse(response);
         this.usersList= Array.from(model.UsersList);
         this.taskModel = model;
-         this.usersList=Array.from( model.UsersList);  
-         console.log(this.usersList)
+        this.usersList=Array.from( model.UsersList);  
+      
          
     }
     

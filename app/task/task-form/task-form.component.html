@@ -1,27 +1,45 @@
 <div class="row">
-    
+
     <div class="col-md-6">
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" [(ngModel)]="taskModel.Title"   class="form-control"   placeholder="Task title">
+            <input type="text" [(ngModel)]="taskModel.Title" class="form-control" placeholder="Task title">
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="assign">Assign to</label>
+            <select class="form-control" [(ngModel)]="taskModel.ExecutorId">
+                <option *ngFor="#executor of usersList" [value]="executor.Key">
+                    {{executor.Value}}
+                </option>
+            </select>
+        </div>
+    </div>
+      
+    <div class="col-md-6">
+        <div class="checkbox checkbox-custom">
+            <input  [(ngModel)]="taskModel.Critical" type="checkbox">
+            <label for="task-critical">
+                Critical
+            </label>
+        </div>
+    </div>
+    
+       <div class="col-md-6">
+        <div class="checkbox checkbox-custom">
+            <input  [(ngModel)]="taskModel.Urgent" type="checkbox">
+            <label for="task-urgent">
+                Urgent
+            </label>
         </div>
     </div>
     
     <div class="col-md-6">
         <div class="form-group">
-            <label for="assign">Assign to</label>
-            <select class="form-control" [(ngModel)]="taskModel.ExecutorId">
-                      <option *ngFor="#executor of usersList" [value]="executor.Id">
-                       {{executor.Email}}
-                      </option>
-           </select> 
-        </div> 
-    </div>
-
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="priority">Priority</label>
-            <input type="text" class="form-control" id="priority" placeholder="">
+            <label for="description">Description</label>
+            <textarea  [(ngModel)]="taskModel.Description" class="form-control"  placeholder="Some words about this awesome task"></textarea>
         </div>
     </div>
 </div>
@@ -30,14 +48,14 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="Sdate">Start Date</label>
-            <input type="datetime-local"  [(ngModel)]="taskModel.StartAt"  class="form-control"   placeholder="">
+            <input type="datetime-local" [(ngModel)]="taskModel.StartAt" class="form-control">
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="form-group">
             <label for="Ddate">Due Date</label>
-            <input type="datetime-local"  [(ngModel)]="taskModel.EndAt" class="form-control"      placeholder="">
+            <input type="datetime-local" [(ngModel)]="taskModel.EndAt" class="form-control">
         </div>
     </div>
 </div>
