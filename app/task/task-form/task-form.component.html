@@ -11,35 +11,54 @@
         <div class="form-group">
             <label for="assign">Assign to</label>
             <select class="form-control" [(ngModel)]="taskModel.ExecutorId">
-                <option *ngFor="#executor of usersList" [value]="executor.Key">
+                <option *ngFor="#executor of taskModel.UsersList" [value]="executor.Key">
                     {{executor.Value}}
                 </option>
             </select>
         </div>
     </div>
-      
-    <div class="col-md-6">
+    <!-- CheckBoxes -->
+    <div class="col-md-4">
         <div class="checkbox checkbox-custom">
-            <input  [(ngModel)]="taskModel.Critical" type="checkbox">
+            <input [(ngModel)]="taskModel.Critical" type="checkbox">
             <label for="task-critical">
                 Critical
             </label>
         </div>
     </div>
-    
-       <div class="col-md-6">
+
+    <div class="col-md-4">
         <div class="checkbox checkbox-custom">
-            <input  [(ngModel)]="taskModel.Urgent" type="checkbox">
+            <input [(ngModel)]="taskModel.Urgent" type="checkbox">
             <label for="task-urgent">
                 Urgent
             </label>
         </div>
     </div>
     
+    <div class="col-md-4">
+        <div class="checkbox checkbox-custom">
+            <input [(ngModel)]="taskModel.KeyFactor" type="checkbox">
+            <label for="task-urgent">
+                Key factor
+            </label>
+        </div>
+    </div>
+    <!-- //end checkBoxes -->
     <div class="col-md-6">
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea  [(ngModel)]="taskModel.Description" class="form-control"  placeholder="Some words about this awesome task"></textarea>
+            <textarea [(ngModel)]="taskModel.Description" class="form-control" placeholder="Some words about this awesome task"></textarea>
+        </div>
+    </div>
+     <div class="col-md-6">
+        <div class="form-group">
+            <label for="assign">Estimated time</label>
+            <select class="form-control" [(ngModel)]="taskModel.EstimatedTimeInMinutes">
+                <option *ngFor="#estimation of taskModel.EstimatedMinList" [value]="estimation.Key">
+                    {{estimation.Value}}
+                </option>
+            </select>
         </div>
     </div>
 </div>
@@ -60,6 +79,6 @@
     </div>
 </div>
 
-<button type="submit" class="btn btn-success waves-effect waves-light">Save</button>
+<button type="submit" (click)="save()" class="btn btn-success waves-effect waves-light">Save</button>
 
 {{taskModel|json}}

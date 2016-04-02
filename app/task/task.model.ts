@@ -23,8 +23,6 @@ export class TaskModel {
     
     //Addtional 
     UsersList:any=[];
-    ImportantList:any=[];
-    UrgentList :any=[];
     EstimatedMinList :any = [];
     AvailableDates:any=[];
     
