@@ -28,4 +28,5 @@ export class TaskboardComponent implements OnInit {
          this.Complete= jsonResponse.Complete;
          this.InProgress= jsonResponse.InProgress;
      }
+     
 }

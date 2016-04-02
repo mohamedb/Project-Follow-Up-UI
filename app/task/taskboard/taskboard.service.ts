@@ -18,6 +18,12 @@ export class TaskboardService extends BaseService {
             .map(res => <any> res.json())
             .catch(super.handleError);
     }
+    
+    changeStateTask(taskId:number){
+         return this.http.get(AppRouteConst.CHANGE_STATE_TASK+"?id="+taskId, this.getReqOptions())
+            .map(res => <any> res.json())
+            .catch(super.handleError); 
+    }
 
     
 }

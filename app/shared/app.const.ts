@@ -32,6 +32,7 @@ export class AppRouteConst {
     static TASKBOARD_TASK = AppRouteConst.BASE_URL + "/TaskApi/Taskboard";
     //Supprot GET && POST
     static ADD_TASK = AppRouteConst.BASE_URL + "/TaskApi/Add"; 
+    static CHANGE_STATE_TASK = AppRouteConst.BASE_URL + "/TaskApi/ChangeTaskState"; 
     /**
      * Task routes 
      */

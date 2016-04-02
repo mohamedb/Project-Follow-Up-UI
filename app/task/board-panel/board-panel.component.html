@@ -20,7 +20,7 @@
                 <div class="card-box kanban-box">
                     <div class="checkbox-wrapper">
                         <div class="checkbox checkbox-success checkbox-single">
-                            <input type="checkbox" id="singleCheckbox2" value="option2" aria-label="Single checkbox Two">
+                            <input type="checkbox"  (click)="changeState(task.Id)" [(ngModel)]="task.Done"  aria-label="Single checkbox Two">
                             <label></label>
                         </div>
                     </div>
