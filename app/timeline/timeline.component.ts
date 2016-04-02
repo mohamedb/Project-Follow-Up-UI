@@ -14,7 +14,7 @@ export class TimelineComponent implements OnInit {
     
     TodayElements:any=[];
     YesterdayElements:any=[];
-    OneWeekElements:any=[];
+    OneMonthAgoElements:any=[];
     constructor(private timelineService:TimelineService , private routeParams: RouteParams ) { }
 
     ngOnInit() {
@@ -28,6 +28,6 @@ export class TimelineComponent implements OnInit {
          response= JSON.parse(response);
          this.TodayElements=response.TodayElements;
          this.YesterdayElements=response.YesterdayElements;
-         this.OneWeekElements=response.OneWeekElements;
+         this.OneMonthAgoElements=response.OneMonthAgoElements; 
      }
 }

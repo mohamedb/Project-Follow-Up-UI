@@ -81,4 +81,11 @@
 
 <button type="submit" (click)="save()" class="btn btn-success waves-effect waves-light">Save</button>
 
-{{taskModel|json}}
+<!-- {{taskModel|json}} -->
+
+<br>
+<hr>
+<br>
+<div style="color:red">
+    {{errorsOnSave|json}}
+</div>

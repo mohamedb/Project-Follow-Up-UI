@@ -10,7 +10,7 @@ import {TaskModel} from './../task.model';
 
 export class TaskFormComponent implements OnInit {
     taskModel: TaskModel = new TaskModel();
-
+    errorsOnSave:any = {};
     constructor(private taskService: TaskService, private routeParams: RouteParams) {
 
     }
@@ -28,8 +28,19 @@ export class TaskFormComponent implements OnInit {
 
     save() {
         this.taskService.saveTaskModel(this.taskModel).subscribe(
-            response => alert(response)
+            response => this.handleSaveResponse(response),
+            error =>alert("Error! cant save the task *__* ")
         );
     }
-
+    handleSaveResponse(response){
+        response = JSON.parse(response);
+     
+        if(response.State==0  )  {
+            this.errorsOnSave=response;
+        }
+        else {
+            alert("OK!")
+        }
+        this.errorsOnSave=response;
+    }
 }
