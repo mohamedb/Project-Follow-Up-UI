@@ -12,7 +12,7 @@ import {TaskboardService} from './../taskboard/taskboard.service';
 export class BoardPanelComponent implements OnInit {
     @Input('Tasks') Tasks:any=[];
     @Input('Title') Title:any="";
-    @Output() mark = new EventEmitter();
+    @Output("notifyResponseEvent") notifyEvent = new EventEmitter();
     constructor(private taskboardService:TaskboardService) { }
     changeState(taskId){
          this.taskboardService.changeStateTask(taskId).subscribe(
@@ -24,6 +24,7 @@ export class BoardPanelComponent implements OnInit {
          if(response.State==1){
              alert("State Change successfully");
              this.ngOnInit(); //Simulate reload!
+             this.notifyEvent.emit(response);
          }
          else{
              alert("Errors occurs while changing task state!");

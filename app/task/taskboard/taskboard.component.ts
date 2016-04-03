@@ -28,5 +28,8 @@ export class TaskboardComponent implements OnInit {
          this.Complete= jsonResponse.Complete;
          this.InProgress= jsonResponse.InProgress;
      }
-     
+      panelUpdated(response){
+          this.ngOnInit();
+          console.log("EventEmitter caputred: \n "+response)
+      }
 }

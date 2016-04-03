@@ -1,12 +1,12 @@
 <div class="row">
      
     <!-- Upcoming -->
-    <board-panel [Title]="'Upcoming'" [Tasks]="Upcoming" ></board-panel>
+    <board-panel [Title]="'Upcoming'" [Tasks]="Upcoming"  (notifyResponseEvent)="panelUpdated($event)"  ></board-panel>
       
     <!-- InProgress-->
-    <board-panel [Title]="'In Progress'" [Tasks]="InProgress" ></board-panel>
+    <board-panel [Title]="'In Progress'" [Tasks]="InProgress" (notifyResponseEvent)="panelUpdated($event)" ></board-panel>
     
     <!-- Complete-->
-    <board-panel [Title]="'Complete'" [Tasks]="Complete" ></board-panel>
+    <board-panel [Title]="'Complete'" [Tasks]="Complete"  (notifyResponseEvent)="panelUpdated($event)"  ></board-panel>
     
 </div>
