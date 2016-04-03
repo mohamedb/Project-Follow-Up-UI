@@ -19,6 +19,7 @@ export class AppRouteConst {
      */
     static CHECK_CREDENTIALS = AppRouteConst.BASE_URL + "/AccountApi/CheckCredentials";
     static VERIFY = AppRouteConst.BASE_URL + "/AccountApi/Verify";
+    static REGISTER = AppRouteConst.BASE_URL + "/AccountApi/Register";
 
     /**
      * Notification routes 

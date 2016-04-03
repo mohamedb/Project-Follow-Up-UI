@@ -5,6 +5,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
 import {NotificationService} from './service';
 import {LoginFormComponent} from './auth/login-form.component';
+import {RegisterComponent} from './auth/register/register.component';
 import {ListProjectsComponent} from './project/list-projects.component';
 import {FormProjectComponent} from './project/form/form-project.component';
 import {LeftMenuComponent} from './menu/left-menu.component';
@@ -29,6 +30,11 @@ import {TaskFormComponent} from "./task/task-form/task-form.component";
         name: 'Login',
         component: LoginFormComponent,
         useAsDefault: true
+    },
+    {
+        path: '/Register',
+        name: 'Register',
+        component: RegisterComponent,
     },
     {
         path: '/Projects',
