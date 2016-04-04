@@ -31,7 +31,11 @@ import {TaskFormComponent} from "./task/task-form/task-form.component";
         component: LoginFormComponent,
         useAsDefault: true
     },
-    {
+    {   
+        /**
+         * This component must not be a direct child of app.component
+         * On logout it fails to load notifs => fails to display !
+         */
         path: '/Register',
         name: 'Register',
         component: RegisterComponent,

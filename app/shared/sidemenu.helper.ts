@@ -6,7 +6,7 @@ export class SideMenuHelper {
     $menuItem = $("#sidebar-menu a");
     resizefunc: any = [];
     constructor() {
-        //other
+        /*
         $(".nicescroll").niceScroll({ cursorcolor: '#98a6ad', cursorwidth: '6px', cursorborderradius: '5px' });
         $('[data-toggle="tooltip"]').tooltip();
 
@@ -53,6 +53,7 @@ export class SideMenuHelper {
         // NAVIGATION HIGHLIGHT & OPEN PARENT
         $("#sidebar-menu ul li.has_sub a.active").parents("li:last").children("a:first").addClass("active").trigger("click");
         console.log("\n**************\nSideMenu.Helper OK:\n*************\n");
+        */
     }
     openLeftBar() {
         $("#wrapper").toggleClass("enlarged");
