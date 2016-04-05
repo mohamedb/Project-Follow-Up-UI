@@ -48,7 +48,7 @@
             <ul class="list-inline">
                 <li>
                     <h3 class="m-b-0">{{project.Tasks.length}}</h3>
-                    <p class="text-muted">Tasks</p>
+                    <a [routerLink]="['Taskboard',{projectId: project.Id}]" class=" waves-effect ">Tasks</a>
                 </li>
                 <li>
                     <h3 class="m-b-0">{{project.Issues.length}}</h3>
@@ -72,10 +72,9 @@
                 <!-- /.progress-bar .progress-bar-danger -->
             </div>
             <!-- /.progress .no-rounded -->
-             <a [routerLink]="['Taskboard',{projectId: project.Id}]" type="button" class="btn  waves-effect waves-light">Tasks</a>
              <a [routerLink]="['Timeline',{projectId: project.Id}]" type="button" class="btn  waves-effect waves-light">Timeline</a>
-             <a [routerLink]="['AddProject',{id: project.Id}]" type="button" class="btn  waves-effect waves-light">Edit</a>
-             <a [routerLink]="['AddTask',{projectId: project.Id}]" type="button" class="btn  waves-effect waves-light">New Task</a>
+             <a [routerLink]="['AddProject',{id: project.Id}]" type="button" class="btn  waves-effect waves-light"><i class="fa fa-edit"></i>Edit</a>
+             <a [routerLink]="['AddTask',{projectId: project.Id}]" type="button" class="btn  waves-effect waves-light"><i class="fa fa-plus"></i> New Task  </a>
              
         </div>
     </div>

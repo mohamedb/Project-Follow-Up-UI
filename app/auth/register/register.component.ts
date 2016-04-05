@@ -9,7 +9,9 @@ import {RegisterService} from './register.service';
     directives: [ROUTER_DIRECTIVES]
 })
 
- 
+ /**
+  * @todo Add form validations
+  */
 export class RegisterComponent implements OnInit {
     registerModel:RegisterModel= new RegisterModel();
     errors= {};
