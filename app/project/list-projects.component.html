@@ -7,12 +7,13 @@
             <div class="project-sort-item">
                 <form class="form-inline">
                     <div class="form-group">
-                        <label>Phase :</label>
-                        <select class="form-control input-sm" #projectStatus>
-                            <option>All Projects({{projects.length}})</option>
-                            <option>Complated</option>
-                            <option>Progress</option>
+                        <label>Phase : </label>
+                        <select class="form-control input-sm" #projectStatus (change)="0">
+                            <option value="-1">All Projects({{projects.length}})</option>
+                            <option value="0">Progress</option>
+                            <option value="1">Complated</option>
                         </select>
+                      
                     </div>
                     <div class="form-group">
                         <label>Sort :</label>
@@ -31,7 +32,7 @@
 </div>
 <!-- end row -->
 <div class="row">
-    <div  *ngFor="#project of projects|filterProject:projectStatus.value " class="col-lg-4">
+    <div  *ngFor="#project of projects|filterProject:projectStatus.value" class="col-lg-4">
         <div class="card-box project-box">
             <div class="label label-default" [ngClass]="{'label-success': project.Over }">
                 <span *ngIf="project.Over">Completed</span>
