@@ -8,7 +8,7 @@
                 <form class="form-inline">
                     <div class="form-group">
                         <label>Phase :</label>
-                        <select class="form-control input-sm">
+                        <select class="form-control input-sm" #projectStatus>
                             <option>All Projects({{projects.length}})</option>
                             <option>Complated</option>
                             <option>Progress</option>
@@ -31,7 +31,7 @@
 </div>
 <!-- end row -->
 <div class="row">
-    <div  *ngFor="#project of projects" class="col-lg-4">
+    <div  *ngFor="#project of projects|filterProject:projectStatus.value " class="col-lg-4">
         <div class="card-box project-box">
             <div class="label label-default" [ngClass]="{'label-success': project.Over }">
                 <span *ngIf="project.Over">Completed</span>
