@@ -63,16 +63,14 @@ export class BaseService {
     
      goToProjects(){
          console.log("Try redirection to App/projects");
-         let link= ['/BaseApp','Projects',{}]
-         //let link= ['/','BaseApp/Projects',{}]
-         //let link = ['Projects',{}];
+         let link= ['/BaseApp','Projects',{}];
          this.router.navigate(link);
     }
     logout(){
        
             localStorage.removeItem("auth");
-            let link = ['Login',{}];
-             
+            //let link = ['Login',{}];//Dormant bug!
+            let link= ['/AuthBase','Login',{}]
             this.router.navigate(link);
         
     }
