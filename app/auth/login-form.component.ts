@@ -17,7 +17,7 @@ export class LoginFormComponent implements OnInit {
         password: "123*Aa",
         rememberMe: false
     };
-
+    loginError="";
     constructor(private loginService: LoginService, private router: Router) {
         console.log("Login-form loaded!");
      }
@@ -31,14 +31,18 @@ export class LoginFormComponent implements OnInit {
         )
     }
     handleResponse(response: any) {
-        if (response == "1") {
+       
+        if (response !=  "0" ) {
+            let user = JSON.stringify(response);
             let auth = "Basic " + btoa(this.model.username + ":" + this.model.password);
             localStorage.setItem("auth", auth);
-            console.log("OK: saved to localStorage");
+            localStorage.setItem("user", user);
+
             this.loginService.goToProjects();
-            return 1; //case navigate fails!
+            return ;
         }
-        console.log("KO!");
+        this.loginError="Please check username/password or both!"
+        console.log("KO! RESP: \t "+user);
     }
  
 }

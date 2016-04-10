@@ -18,8 +18,6 @@ export class TopBarComponent implements OnInit {
        
     }
     flipNotifs(){
-        
-         console.log("flip cliked from topBar V:");
           this.flipNotifBarEvent.emit(null);
      }
 }

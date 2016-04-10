@@ -36,19 +36,8 @@ export class BaseService {
        return this.isAuth;
     }
     
-    getReqOptions():RequestOptions{
-        let headers = new Headers(
-            { "Content-Type": "application/json",
-              "Authorization": localStorage.getItem("auth"),
-              "accepts": "application/json; charset=utf-8",
-            });
-        let options = new RequestOptions({ headers: headers });
-        return options
-    }
-    
     private handleAuthServerResponse(response){
         if(response=="1"){
-            //nice!
             this.isAuth=true;
             return;
         }
@@ -60,19 +49,25 @@ export class BaseService {
         console.log("Some problem from the server :/ ! "+error);
         return Observable.throw(error.json().error || 'Server error');
     }
-    
+    getReqOptions():RequestOptions{
+        let headers = new Headers(
+            { "Content-Type": "application/json",
+              "Authorization": localStorage.getItem("auth"),
+              "accepts": "application/json; charset=utf-8",
+            });
+        let options = new RequestOptions({ headers: headers });
+        return options
+    }
      goToProjects(){
          console.log("Try redirection to App/projects");
          let link= ['/BaseApp','Projects',{}];
          this.router.navigate(link);
     }
     logout(){
-       
             localStorage.removeItem("auth");
             //let link = ['Login',{}];//Dormant bug!
             let link= ['/AuthBase','Login',{}]
             this.router.navigate(link);
-        
     }
     
 }

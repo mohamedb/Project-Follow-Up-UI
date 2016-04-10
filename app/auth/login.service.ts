@@ -7,14 +7,13 @@ import {Subject} from 'rxjs/Rx';
 import {AppRouteConst} from "./../shared/app.const"
 
 @Injectable()
-export class LoginService extends BaseService {
+export class LoginService  {
 
     constructor(protected http: Http, protected router:Router) {
-        super(http,router);
+       // super(http,router);
      }
 
     login(loginModel: any) {
-       
         let body = JSON.stringify(loginModel);
         let headers = new Headers(
             { "Content-Type": "application/json",
@@ -25,6 +24,22 @@ export class LoginService extends BaseService {
         return this.http.post(AppRouteConst.CHECK_CREDENTIALS, body, options)
             .map(res => <any> res.json())
             .catch(this.handleError);
+    }
+     protected handleError(error: Response) {
+        console.log("Some problem from the server :/ ! "+error);
+        return Observable.throw(error.json().error || 'Server error');
+    }
+     goToProjects(){
+         console.log("Go to project from loginFrom cmp");
+         let link= ['/BaseApp','Projects',{}];
+         this.router.navigate(link);
+    }
+    logout(){
+            localStorage.removeItem("auth");
+            localStorage.removeItem("user");
+           
+            let link= ['/AuthBase','Login',{}]
+            this.router.navigate(link);
     }
    
 }
