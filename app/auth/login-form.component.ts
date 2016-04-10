@@ -18,7 +18,9 @@ export class LoginFormComponent implements OnInit {
         rememberMe: false
     };
 
-    constructor(private loginService: LoginService, private router: Router) { }
+    constructor(private loginService: LoginService, private router: Router) {
+        console.log("Login-form loaded!");
+     }
     ngOnInit() {
        
      }

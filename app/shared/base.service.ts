@@ -62,7 +62,10 @@ export class BaseService {
     }
     
      goToProjects(){
-         let link = ['Projects',{}];
+         console.log("Try redirection to App/projects");
+         let link= ['/BaseApp','Projects',{}]
+         //let link= ['/','BaseApp/Projects',{}]
+         //let link = ['Projects',{}];
          this.router.navigate(link);
     }
     logout(){
