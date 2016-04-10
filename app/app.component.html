@@ -1,5 +1,5 @@
 <!-- Begin page -->
-<div id="wrapper">
+<div id="wrapper" [ngClass] ="{'right-bar-enabled':showNotifs}">
 
     <!-- Top Bar Start -->
      <top-bar></top-bar>
@@ -41,7 +41,7 @@
 
 
     <!-- Right Sidebar -->
-       <right-bar></right-bar>
+       <right-bar (flipNotifBarEvent)="flipNotifs($event)"  ></right-bar>
     <!-- /Right-bar -->
 
 </div>

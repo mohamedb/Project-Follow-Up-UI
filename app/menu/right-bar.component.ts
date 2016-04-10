@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, Output,EventEmitter} from 'angular2/core';
 import {ROUTER_DIRECTIVES, Router, Location} from 'angular2/router';
 import {NotificationService} from "./notification.service"
 @Component({
@@ -9,10 +9,10 @@ import {NotificationService} from "./notification.service"
 })
 
 export class RightBarComponent implements OnInit {
-    notifications: any = [];
-    constructor(private notificationService: NotificationService) {
-
-    }
+     notifications: any = [];
+     @Output("flipNotifBarEvent") flipNotifBarEvent = new EventEmitter();
+     showNotifs=false;
+    constructor(private notificationService: NotificationService) { }
 
      ngOnInit() {
         this.notificationService.getAll("").subscribe(
@@ -24,7 +24,10 @@ export class RightBarComponent implements OnInit {
          this.notifications=json;
          
      }
-     
+     flipNotifs(){
+         console.log("flip cliked V:"+ this.showNotifs);
+          this.flipNotifBarEvent.emit(this.showNotifs);
+     }
      refresh(){
          this.ngOnInit();
      }

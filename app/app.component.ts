@@ -30,11 +30,5 @@ import {BaseAppComponent} from './base-app.component';
      
  ])
 export class AppComponent {
-    notifs: any;
-    constructor() {
-      
-       
-    }
-   
-   
+    constructor() {  }
 }

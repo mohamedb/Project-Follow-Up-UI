@@ -63,11 +63,11 @@ import {TaskFormComponent} from "./task/task-form/task-form.component";
     }
  ])
 export class BaseAppComponent {
-    notifs: any;
-    constructor() {
-      
-       
+    showNotifs=false;
+    constructor() { }
+    flipNotifs(value) {
+        this.showNotifs=value;
+        console.log("event flip notifs captured v:"+value);
     }
-   
    
 }
