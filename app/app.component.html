@@ -2,7 +2,7 @@
 <div id="wrapper" [ngClass] ="{'right-bar-enabled':showNotifs}">
 
     <!-- Top Bar Start -->
-     <top-bar></top-bar>
+     <top-bar (flipNotifTopBarEvent)="flipNotifs($event)" ></top-bar>
     <!-- Top Bar End -->
 
 
