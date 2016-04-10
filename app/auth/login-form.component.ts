@@ -33,16 +33,14 @@ export class LoginFormComponent implements OnInit {
     handleResponse(response: any) {
        
         if (response !=  "0" ) {
-            let user = JSON.stringify(response);
             let auth = "Basic " + btoa(this.model.username + ":" + this.model.password);
             localStorage.setItem("auth", auth);
-            localStorage.setItem("user", user);
-
+            localStorage.setItem("user", response);
             this.loginService.goToProjects();
             return ;
         }
         this.loginError="Please check username/password or both!"
-        console.log("KO! RESP: \t "+user);
+        console.log("KO! RESP: \t "+response);
     }
  
 }

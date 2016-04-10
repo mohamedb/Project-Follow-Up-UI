@@ -10,11 +10,12 @@ import {SideMenuHelper} from "./../shared/sidemenu.helper";
 })
 
 export class LeftMenuComponent implements OnInit {
-
+    user:any = {};
     constructor(private loginService:LoginService) { }
 
     ngOnInit() {
           let sidemenu = new SideMenuHelper();
+          this.user= JSON.parse(localStorage.getItem("user"));
      }
     
     logout(){
