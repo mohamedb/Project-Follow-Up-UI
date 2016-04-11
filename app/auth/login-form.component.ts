@@ -27,20 +27,18 @@ export class LoginFormComponent implements OnInit {
     login() {
         this.loginService.login(this.model).subscribe(
             serverResponse => this.handleResponse(serverResponse),
-            err => console.log(err)
+            err => this.handleError(err)
         )
     }
     handleResponse(response: any) {
-       
-        if (response !=  "0" ) {
             let auth = "Basic " + btoa(this.model.username + ":" + this.model.password);
             localStorage.setItem("auth", auth);
             localStorage.setItem("user", response);
             this.loginService.goToProjects();
-            return ;
-        }
-        this.loginError="Please check username/password or both!"
-        console.log("KO! RESP: \t "+response);
+     }
+    
+    handleError(err:any){
+         this.loginError="Please check username/password or both!";
     }
  
 }

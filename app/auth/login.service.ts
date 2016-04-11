@@ -10,7 +10,6 @@ import {AppRouteConst} from "./../shared/app.const"
 export class LoginService  {
 
     constructor(protected http: Http, protected router:Router) {
-       // super(http,router);
      }
 
     login(loginModel: any) {
@@ -23,7 +22,7 @@ export class LoginService  {
         let options = new RequestOptions({ headers: headers });
         return this.http.post(AppRouteConst.CHECK_CREDENTIALS, body, options)
             .map(res => <any> res.json())
-            .catch(this.handleError);
+          //  .catch(this.handleError); let the component handle error and do some dome manipulations 
     }
      protected handleError(error: Response) {
         console.log("Some problem from the server :/ ! "+error);
@@ -37,7 +36,6 @@ export class LoginService  {
     logout(){
             localStorage.removeItem("auth");
             localStorage.removeItem("user");
-           
             let link= ['/AuthBase','Login',{}]
             this.router.navigate(link);
     }
