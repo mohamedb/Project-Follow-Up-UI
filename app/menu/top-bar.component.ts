@@ -9,6 +9,7 @@ import {NotificationService} from "./notification.service"
 
 export class TopBarComponent implements OnInit {
     @Output("flipNotifTopBarEvent") flipNotifBarEvent = new EventEmitter();
+    @Output("flipMenuEvent") flipMenuEvent = new EventEmitter();
     
     constructor() {
        
@@ -17,7 +18,12 @@ export class TopBarComponent implements OnInit {
     ngOnInit() { 
        
     }
+    flipMenu(){
+        console.log("FlipMenu Event Emitted!");
+        this.flipMenuEvent.emit(null);
+    }
     flipNotifs(){
           this.flipNotifBarEvent.emit(null);
      }
+     
 }

@@ -20,13 +20,13 @@ import {TaskFormComponent} from "./task/task-form/task-form.component";
 @Component({
     selector: 'base-app',
     templateUrl: "app/app.component.html",
-    directives: [ROUTER_DIRECTIVES,LeftMenuComponent,TopBarComponent,RightBarComponent]
+    directives: [ROUTER_DIRECTIVES, LeftMenuComponent, TopBarComponent, RightBarComponent]
     /*styleUrls: [  
      "./../assets/css/core.css" , "./../assets/css/components.css", 
      "./../assets/css/pages.css" , "./../assets/css/menu.css","./../assets/css/responsive.css" , "./../app.css"  ]*/
 })
 @RouteConfig([
-    
+
     {
         path: '/Projects',
         name: 'Projects',
@@ -36,37 +36,43 @@ import {TaskFormComponent} from "./task/task-form/task-form.component";
         path: '/Add-Project/:id', /* Add,id=0|Edit, id>0 */
         name: 'AddProject',
         component: FormProjectComponent,
-    } 
+    }
     ,
     {
-        path: '/Taskboard/:projectId',  
+        path: '/Taskboard/:projectId',
         name: 'Taskboard',
         component: TaskboardComponent,
-    } 
+    }
     ,
     {
-        path: '/Timeline/:projectId',  
+        path: '/Timeline/:projectId',
         name: 'Timeline',
         component: TimelineComponent,
     }
     ,
     {
-        path: '/Task/Details/:taskId',  
+        path: '/Task/Details/:taskId',
         name: 'TaskDetails',
         component: TaskDetailsComponent,
-    } 
+    }
     ,
     {
-        path: '/Task/Add/:projectId',  
+        path: '/Task/Add/:projectId',
         name: 'AddTask',
         component: TaskFormComponent,
     }
- ])
+])
 export class BaseAppComponent {
-    showNotifs=true;
+    showNotifs = true;
+    showMenu = true;
     constructor() { }
     flipNotifs(value) {
-        this.showNotifs=!this.showNotifs;
+        this.showNotifs = !this.showNotifs;
     }
-   
+    flipMenu(value) {
+        console.log("flip Menu event: captured");
+        this.showMenu = !this.showMenu;
+    }
+
+
 }

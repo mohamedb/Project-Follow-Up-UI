@@ -1,8 +1,8 @@
 <!-- Begin page -->
-<div id="wrapper" [ngClass] ="{'right-bar-enabled':showNotifs}">
+<div id="wrapper" [ngClass] ="{'right-bar-enabled':showNotifs, 'enlarged':showMenu}">
 
     <!-- Top Bar Start -->
-     <top-bar (flipNotifTopBarEvent)="flipNotifs($event)" ></top-bar>
+     <top-bar (flipNotifTopBarEvent)="flipNotifs($event)"  (flipMenuEvent)="flipMenu($event)"  ></top-bar>
     <!-- Top Bar End -->
 
 
