@@ -12,6 +12,7 @@ export class FormProjectComponent implements OnInit {
     projectModel:ProjectModel= new ProjectModel();
     constructor(private projetService:ProjectService, private routeParams: RouteParams) { }
     ngOnInit() {
+          $("#page_Title").text("Project: Add/Edit") ; //Change top title
           let id = +this.routeParams.get('id');
           this.projectModel.Id=id;
           if(id>0){

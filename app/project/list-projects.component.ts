@@ -18,6 +18,7 @@ export class ListProjectsComponent implements OnInit {
      }
 
     ngOnInit() {
+        $("#page_Title").text("Projects list") ; //Change top title
         this.projectService.getAll("").subscribe(
             resp=>this.handleResponse(resp)
         )
