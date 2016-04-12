@@ -38,4 +38,11 @@ export class AppRouteConst {
      * Task routes 
      */
     static BYPROJECT_TIMELINE = AppRouteConst.BASE_URL + "/TimelineApi/ByProject";
+    
+    /**
+     * Issue routes
+     */
+    static ALL_ISSUE = AppRouteConst.BASE_URL + "/IssueApi/GetAll";
+    static ADD_ISSUE = AppRouteConst.BASE_URL + "/IssueApi/Add";
+    static MARK_RESSLOVED_ISSUE = AppRouteConst.BASE_URL + "/IssueApi/MarkResolved"; 
 }

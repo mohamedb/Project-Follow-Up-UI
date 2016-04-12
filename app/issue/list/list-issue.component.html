@@ -1,1 +1,9 @@
-list-issue.component.html
+<div class="row">
+    <h5>Issues List for the project </h5>
+<ul class="list-unstyled task-list" id="drag-upcoming">
+    <b *ngFor="#issue of Issues">
+         {{issue.Id}} <br>
+    </b>
+
+</ul>
+</div>
