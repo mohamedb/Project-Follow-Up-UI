@@ -14,8 +14,8 @@ export class ListIssueComponent implements OnInit {
     ngOnInit() { 
        let projectId = +this.routeParams.get('projectId');
        this.issueService.getAll(projectId).subscribe(
-           res=>this.handleResponse,
-           err=>this.handleError
+           res=>this.handleResponse(res),
+           err=>this.handleError(err)
        )  
     }
     handleResponse(response:any){
