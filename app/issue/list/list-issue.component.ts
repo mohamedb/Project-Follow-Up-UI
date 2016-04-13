@@ -19,6 +19,9 @@ export class ListIssueComponent implements OnInit {
            err=>this.handleError(err)
        )  
     }
+    changeState(id){
+        console.log("changeState for id: "+id);
+    }
     handleResponse(response:any){
         response= JSON.parse(response);
         this.Issues= response;
