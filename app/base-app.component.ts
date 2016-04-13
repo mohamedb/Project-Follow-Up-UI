@@ -69,7 +69,12 @@ import {ListIssueComponent } from "./issue/list/list-issue.component";
     }
 ])
 export class BaseAppComponent {
-    showNotifs = true;
+    /**
+     * Default hide notifs: 
+     * @todo : add a class that hold user prefs (stored int localStorage = from Server first auth)
+     * then use it!
+     */
+    showNotifs = false; 
     showMenu = true;
     constructor() { }
     flipNotifs(value) {

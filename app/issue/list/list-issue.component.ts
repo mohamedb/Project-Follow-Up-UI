@@ -12,6 +12,7 @@ export class ListIssueComponent implements OnInit {
     constructor(private issueService:IssueService, private routeParams: RouteParams ) { }
 
     ngOnInit() { 
+       $("#page_Title").text("Issues list") ; //Change top title
        let projectId = +this.routeParams.get('projectId');
        this.issueService.getAll(projectId).subscribe(
            res=>this.handleResponse(res),

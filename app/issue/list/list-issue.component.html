@@ -2,9 +2,13 @@
     <h5>Issues List for the project </h5>
 <ul class="list-unstyled task-list" id="drag-upcoming">
     <b *ngFor="#issue of Issues">
-         {{issue.Id}} <br>
-         {{issue.Description}}
+         #: {{issue.Id}} <br>
+         Status: {{issue.Status}}<br>
+         Related Area: {{issue.RelatedArea}}<br>
+         Since: {{issue.TimeAgo}}<br>
+         Description:  {{issue.Description}}
     </b>
+    <hr>
 
 </ul>
 </div>
