@@ -17,6 +17,7 @@ import {TimelineComponent} from "./timeline/timeline.component";
 import {TaskDetailsComponent} from "./task/task-details/task-details.component";
 import {TaskFormComponent} from "./task/task-form/task-form.component";
 import {ListIssueComponent } from "./issue/list/list-issue.component";
+import {FormIssueComponent} from "./issue/form/form-issue.component";
 
 @Component({
     selector: 'base-app',
@@ -66,6 +67,11 @@ import {ListIssueComponent } from "./issue/list/list-issue.component";
         path: '/Issue/List/:projectId',
         name: 'ListIssue',
         component: ListIssueComponent,
+    },
+    {
+        path: '/Issue/New/:projectId',
+        name: 'NewIssue',
+        component: FormIssueComponent,
     }
 ])
 export class BaseAppComponent {
