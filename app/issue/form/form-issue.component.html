@@ -1,1 +1,28 @@
-form-issue.component.html
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea [(ngModel)]="issueModel.Description" class="form-control" placeholder="Some words about this issue!">
+           </textarea>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="title">Related Area(s)</label>
+            <input type="text" [(ngModel)]="issueModel.RelatedArea" class="form-control" placeholder="Deadlines, Budget ...">
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="assign">Status</label>
+            <select class="form-control" [(ngModel)]="issueModel.Status">
+                <option *ngFor="#stat of issueModel.StatusList" [value]="stat.Key">
+                    {{stat.Value}}
+                </option>
+            </select>
+        </div>
+    </div>
+</div>
