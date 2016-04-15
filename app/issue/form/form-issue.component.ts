@@ -15,10 +15,23 @@ export class FormIssueComponent implements OnInit {
     ngOnInit() {
         let projectId = +this.routeParams.get('projectId');
         this.issueService.getFormModel(projectId).subscribe(
-            res=>this.handleResponse(res)
+            res=>this.handleGetModelResponse(res)
         )
     }
-    handleResponse(res){
-        this.issueModel= JSON.parse(res);
+    handleGetModelResponse(res){
+        this.issueModel = JSON.parse(res);
+    }
+    
+    save(){
+        this.issueService.save(this.issueModel).subscribe(
+            res=>this.handleSaveResponse(res)
+        );
+    }
+    handleSaveResponse(res){
+        res= JSON.parse(res);
+        console.log(res);
+        /**
+         * Do something better! let the user know and redirect!
+         */
     }
 }
