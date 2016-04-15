@@ -5,33 +5,39 @@ import {RouteParams, Router} from 'angular2/router';
 
 @Component({
     selector: 'form-issue',
-    templateUrl: 'app/issue/form/form-issue.component.html'
+    templateUrl: 'app/issue/form/form-issue.component.html',
+    providers:[IssueService]
 })
 
 export class FormIssueComponent implements OnInit {
     issueModel: IssueModel = new IssueModel();
-    constructor(private issueService:IssueService,private routeParams: RouteParams) { }
+    constructor(private issueService: IssueService, private routeParams: RouteParams) { }
 
     ngOnInit() {
         let projectId = +this.routeParams.get('projectId');
         this.issueService.getFormModel(projectId).subscribe(
-            res=>this.handleGetModelResponse(res)
+            res => this.handleGetModelResponse(res)
         )
     }
-    handleGetModelResponse(res){
+    handleGetModelResponse(res) {
         this.issueModel = JSON.parse(res);
     }
-    
-    save(){
+
+    save() {
         this.issueService.save(this.issueModel).subscribe(
-            res=>this.handleSaveResponse(res)
+            res => this.handleSaveResponse(res)
         );
     }
-    handleSaveResponse(res){
-        res= JSON.parse(res);
+    handleSaveResponse(res) {
+        res = JSON.parse(res);
         console.log(res);
-        /**
-         * Do something better! let the user know and redirect!
-         */
+        if (res.State == 1) {
+            alert(res.Message);
+            this.issueService.goToProjects();/* @todo redirect to issues list */
+        }
+        else {
+            alert("Some errors occured\n: " + res.Message);
+        }
+
     }
 }

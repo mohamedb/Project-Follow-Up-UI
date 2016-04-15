@@ -27,7 +27,7 @@ export class FormProjectComponent implements OnInit {
     }
     save(){
         this.projetService.saveProject(this.projectModel).subscribe(
-            response=>this.handleSaveResponse(response))
+            response=>this.handleSaveResponse(response)
         );
     }
     handleSaveResponse(res){
@@ -37,7 +37,7 @@ export class FormProjectComponent implements OnInit {
             this.projetService.goToProjects();
         }
         else {
-            alert("Some errors occured: "+res.Message);
+            alert("Some errors occured\n: "+res.Message);
         }
     }
 }
