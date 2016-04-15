@@ -27,7 +27,17 @@ export class FormProjectComponent implements OnInit {
     }
     save(){
         this.projetService.saveProject(this.projectModel).subscribe(
-            response=>console.log(JSON.stringify(response))
+            response=>this.handleSaveResponse(response))
         );
+    }
+    handleSaveResponse(res){
+        res= JSON.parse(res);
+        if(res.State==1){
+            alert("Project saved successfully");
+            this.projetService.goToProjects();
+        }
+        else {
+            alert("Some errors occured: "+res.Message);
+        }
     }
 }

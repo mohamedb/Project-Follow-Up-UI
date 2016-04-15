@@ -41,3 +41,7 @@ list-projects{ padding: 1px;}
     top: 50%;
     width: 20px;
 }
+ .router-link-active {
+    color: #000000 !important;
+    background-color: #D1C4E9;
+}
