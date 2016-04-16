@@ -1,11 +1,12 @@
 import {Component, OnInit} from 'angular2/core';
 import {RouteParams,Router,ROUTER_DIRECTIVES} from 'angular2/router';
 import {IssueService} from './../issue.service';
-import {ModelState} from './../../shared/model-state.model';
+import {ModelState} from './../../shared/model-state/model-state.model';
+import {ModelStateComponent} from './../../shared/model-state/model-state.component';
 @Component({
     selector: 'list-issue',
     templateUrl: 'app/issue/list/list-issue.component.html',
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES,ModelStateComponent],
     providers: [IssueService]
 })
 
@@ -25,8 +26,12 @@ export class ListIssueComponent implements OnInit {
     }
     openCloseIssue(id){
         this.issueService.openCloseIssue(parseInt(id)).subscribe(
-            res=> this.modelState=<ModelState>JSON.parse(res) 
+            res=>  this.handleOpenCloseIssueResponse(res)
         );
+    }
+    handleOpenCloseIssueResponse(res){
+        this.modelState=<ModelState>JSON.parse(res);
+        this.ngOnInit();
     }
     handleResponse(response:any){
         response= JSON.parse(response);
