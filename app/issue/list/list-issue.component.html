@@ -1,4 +1,8 @@
 <div class="row">
+        <span *ngFor="#errMsg of modelState.ErrorMessages" style="color:red;">
+            {{errMsg.Value}}
+        </span>
+
     <ul class="list-unstyled task-list" id="drag-upcoming">
         <li *ngFor="#issue of Issues">
             <div class="card-box kanban-box">
@@ -28,7 +32,7 @@
                     </ul>
                 </div>
             </div>
-           
+
         </li>
 
     </ul>

@@ -1,6 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {RouteParams,Router,ROUTER_DIRECTIVES} from 'angular2/router';
 import {IssueService} from './../issue.service';
+import {ModelState} from './../../shared/model-state.model';
 @Component({
     selector: 'list-issue',
     templateUrl: 'app/issue/list/list-issue.component.html',
@@ -11,6 +12,7 @@ import {IssueService} from './../issue.service';
 export class ListIssueComponent implements OnInit {
     Issues:Array<any>=[];
     projectId:number=0;
+    modelState:ModelState=new ModelState();
     constructor(private issueService:IssueService, private routeParams: RouteParams ) { }
 
     ngOnInit() { 
@@ -23,7 +25,7 @@ export class ListIssueComponent implements OnInit {
     }
     openCloseIssue(id){
         this.issueService.openCloseIssue(parseInt(id)).subscribe(
-            res=>alert(""+ JSON.parse(res).Messages)
+            res=> this.modelState=<ModelState>JSON.parse(res) 
         );
     }
     handleResponse(response:any){
