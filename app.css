@@ -45,3 +45,6 @@ list-projects{ padding: 1px;}
     color: #000000 !important;
     background-color: #D1C4E9;
 }
+a:hover {
+    cursor: pointer;
+}

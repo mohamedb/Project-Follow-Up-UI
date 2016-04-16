@@ -21,8 +21,10 @@ export class ListIssueComponent implements OnInit {
            err=>this.handleError(err)
        )  
     }
-    changeState(id){
-        console.log("changeState for id: "+id);
+    openCloseIssue(id){
+        this.issueService.openCloseIssue(parseInt(id)).subscribe(
+            res=>alert(""+ JSON.parse(res).Messages)
+        );
     }
     handleResponse(response:any){
         response= JSON.parse(response);

@@ -34,5 +34,10 @@ export class IssueService extends BaseService {
             .map(res => <any>res.json())
             .catch(super.handleError);
     }
+    openCloseIssue(issueId:number){
+        return this.http.get(AppRouteConst.OPEN_CLOSE_ISSUE + "?id=" + issueId, this.getReqOptions())
+            .map(res => <any>res.json())
+            .catch(super.handleError);
+    }
 
 }
