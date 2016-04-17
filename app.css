@@ -48,3 +48,8 @@ list-projects{ padding: 1px;}
 a:hover {
     cursor: pointer;
 }
+.alert-success {
+    background-color: #10C469;
+    border-color: #00BCD4;
+    color: #FFFFFF;
+}

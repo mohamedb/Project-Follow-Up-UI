@@ -20,7 +20,7 @@ export class FormIssueComponent implements OnInit {
         )
     }
     handleGetModelResponse(res) {
-        this.issueModel = JSON.parse(res);
+        this.issueModel =  res;
     }
 
     save() {
@@ -29,8 +29,6 @@ export class FormIssueComponent implements OnInit {
         );
     }
     handleSaveResponse(res) {
-        res = JSON.parse(res);
-        console.log(res);
         if (res.State == 1) {
             alert(res.Message);
             this.issueService.goToProjects();/* @todo redirect to issues list */

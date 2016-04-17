@@ -18,15 +18,14 @@ export class TaskboardComponent implements OnInit {
     ngOnInit() {
         let projectId = +this.routeParams.get('projectId');
         this.taskboardService.getTaskboard(projectId).subscribe(
-            resp=>this.Upcoming=JSON.parse(resp).Upcoming
+            resp=>this.Upcoming=resp.Upcoming
         );
      }
      
      handleResponse(response){
-         let jsonResponse= JSON.parse(response);
-         this.Upcoming=jsonResponse.Upcoming;
-         this.Complete= jsonResponse.Complete;
-         this.InProgress= jsonResponse.InProgress;
+         this.Upcoming=response.Upcoming;
+         this.Complete= response.Complete;
+         this.InProgress= response.InProgress;
      }
       panelUpdated(response){
           this.ngOnInit();

@@ -19,7 +19,6 @@ export class TaskDetailsComponent implements OnInit {
         )  
      }
      handleResponse(response){
-         let jsonResponse= JSON.parse(response);
-         this.task=jsonResponse;
+         this.task=response;
      }
 }

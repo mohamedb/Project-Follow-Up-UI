@@ -22,8 +22,7 @@ export class TaskFormComponent implements OnInit {
         );
     }
     handleResponse(response) {
-        let model = JSON.parse(response);
-        this.taskModel = model;
+        this.taskModel = response;
     }
 
     save() {
@@ -33,8 +32,6 @@ export class TaskFormComponent implements OnInit {
         );
     }
     handleSaveResponse(response){
-        response = JSON.parse(response);
-     
         if(response.State==0  )  {
             this.errorsOnSave=response;
         }

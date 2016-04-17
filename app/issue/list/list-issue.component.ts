@@ -30,11 +30,10 @@ export class ListIssueComponent implements OnInit {
         );
     }
     handleOpenCloseIssueResponse(res){
-        this.modelState=<ModelState>JSON.parse(res);
+        this.modelState=<ModelState>res;
         this.ngOnInit();
     }
     handleResponse(response:any){
-        response= JSON.parse(response);
         this.Issues= response;
     }
     handleError(err){

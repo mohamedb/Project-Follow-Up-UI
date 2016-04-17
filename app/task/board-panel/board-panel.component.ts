@@ -20,7 +20,6 @@ export class BoardPanelComponent implements OnInit {
          )
      }
      handleChangeStateResponse(response){
-         response = JSON.parse(response);
          if(response.State==1){
              alert("State Change successfully");
              this.ngOnInit(); //Simulate reload!
