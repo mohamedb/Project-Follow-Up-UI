@@ -19,9 +19,8 @@ export class RightBarComponent implements OnInit {
             resp=>this.handleResponse(resp)
         )
      }
-     handleResponse(resp:any){
-         let json = JSON.parse(resp);
-         this.notifications=json;
+     handleResponse(res:any){
+         this.notifications=res;
          
      }
      flipNotifs(){
