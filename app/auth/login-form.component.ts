@@ -33,7 +33,8 @@ export class LoginFormComponent implements OnInit {
     handleResponse(response: any) {
             let auth = "Basic " + btoa(this.model.username + ":" + this.model.password);
             localStorage.setItem("auth", auth);
-            localStorage.setItem("user", response);
+            let user = JSON.stringify(response);
+            localStorage.setItem("user", user);
             this.loginService.goToProjects();
      }
     

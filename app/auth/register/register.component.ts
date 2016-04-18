@@ -26,8 +26,6 @@ export class RegisterComponent implements OnInit {
         )
     }
     handleRegisterResponse(response){
-        response = JSON.parse(response);
-        console.log(response);
         if(response.State==1){
            alert("Your account is added, please login now!");
         }

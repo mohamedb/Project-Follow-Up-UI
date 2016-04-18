@@ -27,7 +27,7 @@ export class TimelineComponent implements OnInit {
      }
      
      handleReponse(response){
-         response= JSON.parse(response);
+     
          this.TodayElements=response.TodayElements;
          this.YesterdayElements=response.YesterdayElements;
          this.OneMonthAgoElements=response.OneMonthAgoElements; 
