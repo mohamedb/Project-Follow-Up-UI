@@ -1,7 +1,7 @@
 import {Injectable} from 'angular2/core';
 import {BaseService} from './../shared/base.service';
 import {Http, Response, Headers, RequestOptions} from 'angular2/http';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} from 'angular2/router';
+import {  Router, Location} from 'angular2/router';
 import {AppRouteConst} from './../shared/app.const';
 import {IssueModel} from './issue.model';
 @Injectable()
