@@ -18,6 +18,7 @@ import {TaskDetailsComponent} from "./task/task-details/task-details.component";
 import {TaskFormComponent} from "./task/task-form/task-form.component";
 import {ListIssueComponent } from "./issue/list/list-issue.component";
 import {FormIssueComponent} from "./issue/form/form-issue.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 @Component({
     selector: 'base-app',
@@ -33,6 +34,11 @@ import {FormIssueComponent} from "./issue/form/form-issue.component";
         path: '/Projects',
         name: 'Projects',
         component: ListProjectsComponent,
+    },
+    {
+        path: '/Dashboard',
+        name: 'Dashboard',
+        component: DashboardComponent,
     },
     {
         path: '/Add-Project/:id', /* Add,id=0|Edit, id>0 */

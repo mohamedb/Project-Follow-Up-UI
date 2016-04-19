@@ -8,5 +8,11 @@ export class DashboardService extends BaseService {
     constructor(protected http: Http, protected router: Router) {
         super(http, router);
     }
+    
+    getAll(){
+         return this.http.get(AppRouteConst.ALL_DASHBOARD, this.getReqOptions())
+            .map(res => <any>res.json())
+            .catch(super.handleError);
+    }
 
 }

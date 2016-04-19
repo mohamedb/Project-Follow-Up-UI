@@ -46,5 +46,9 @@ export class AppRouteConst {
     static ADD_ISSUE = AppRouteConst.BASE_URL + "/IssueApi/Add"; /* Get|Post */
     static OPEN_CLOSE_ISSUE = AppRouteConst.BASE_URL + "/IssueApi/OpenCloseIssue"; 
     
+    /**
+     * Dashboard
+     */
+     static ALL_DASHBOARD = AppRouteConst.BASE_URL + "/DashboardApi/GetAll";
     
 }
