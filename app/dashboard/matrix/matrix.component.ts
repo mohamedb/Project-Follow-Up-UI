@@ -14,7 +14,7 @@ export class MatrixComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-       // console.log(this.Model);
+ 
     }
 
 }
