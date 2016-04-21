@@ -21,7 +21,8 @@
         </table>
         <h5 *ngIf="!testArray(data.TodayDoneTasks)">Nothing for now <i class="fa fa-battery-0"></i></h5>
     </div>
-
+    
+    <matrix [matrixData]="data.MatrixVM"></matrix>
 
     <h4>Current-Day</h4>
     <div class="card-box">
