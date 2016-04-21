@@ -10,6 +10,7 @@ import {MatrixComponent } from './matrix/matrix.component';
 })
 export class DashboardComponent implements OnInit {
     data: any = {};
+    matrix:any;
     constructor(private dashboardService: DashboardService) { }
 
     ngOnInit() {
@@ -20,6 +21,7 @@ export class DashboardComponent implements OnInit {
     }
     handleResponse(res: any) {
         this.data = res
+        this.matrix=res.MatrixVM;
     }
 
     /**

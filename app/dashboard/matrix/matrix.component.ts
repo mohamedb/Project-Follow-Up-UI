@@ -5,9 +5,16 @@ import { Component, OnInit, Input } from 'angular2/core';
     templateUrl: 'app/dashboard/matrix/matrix.component.html'
 })
 export class MatrixComponent implements OnInit {
-    @Input("matrixData") Model={};
+    @Input("matrixData") Model: any = {
+        ImportantAndUrgent: [],
+        ImportantNotUrgent: [],
+        NotImportantButUrgent: [],
+        NotImportantNotUrgent: []
+    };
     constructor() { }
- 
-    ngOnInit() { }
+
+    ngOnInit() {
+       // console.log(this.Model);
+    }
 
 }
