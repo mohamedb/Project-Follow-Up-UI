@@ -5,9 +5,10 @@ import {Observable}     from 'rxjs/Observable';
 import {Subject} from 'rxjs/Rx';
 import {BaseService} from './../../shared/base.service';
 import {AppRouteConst} from './../../shared/app.const';
+import {TaskService} from './../task.service';
 
 @Injectable()
-export class TaskboardService extends BaseService {
+export class TaskboardService extends TaskService {
 
     constructor(protected http:Http, protected router:Router) {
         super(http,router);
@@ -19,11 +20,7 @@ export class TaskboardService extends BaseService {
             .catch(super.handleError);
     }
     
-    changeStateTask(taskId:number){
-         return this.http.get(AppRouteConst.CHANGE_STATE_TASK+"?id="+taskId, this.getReqOptions())
-            .map(res => <any> res.json())
-            .catch(super.handleError); 
-    }
+    
 
     
 }

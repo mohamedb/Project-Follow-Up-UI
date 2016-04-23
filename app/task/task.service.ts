@@ -39,6 +39,12 @@ export class TaskService extends BaseService {
             .catch(super.handleError);
     }
     
+    changeStateTask(taskId:number){
+         return this.http.get(AppRouteConst.CHANGE_STATE_TASK+"?id="+taskId, this.getReqOptions())
+            .map(res => <any> res.json())
+            .catch(super.handleError); 
+    }
+    
     /**
      * Plan a task for current day
      */
