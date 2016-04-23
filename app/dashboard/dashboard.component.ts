@@ -24,6 +24,14 @@ export class DashboardComponent implements OnInit {
         this.data = res
         this.matrix=res.MatrixVM;
     }
+    handleResponseEvent(response){
+        if(response.State==1  )  {
+            this.ngOnInit(); //reload 
+        }
+        else {
+            alert(response.Message);
+        }
+    }
 
     /**
      * Particularly useful to avoid .length on undefined

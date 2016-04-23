@@ -53,3 +53,9 @@ a:hover {
     border-color: #00BCD4;
     color: #FFFFFF;
 }
+
+.rotate-txt {
+    float: right;
+    margin-top: 29px;
+    transform: rotate(-58deg);
+}

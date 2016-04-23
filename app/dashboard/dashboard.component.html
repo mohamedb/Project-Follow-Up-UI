@@ -40,14 +40,15 @@
                     <td> {{task.Title}}</td>
                     <td> {{task.EstimatedTimeInMinutes / 60}} Hour(s)</td>
                     <td>
-                        <span style="color:red;">Time is over!</span>
+                        <span style="color:red;">{{task.TaskPlanningStatus}}</span>
                     </td>
                     <td>
-                        <a *ngIf="task.Done" href="" class="btn changeState"  >
+                        <!-- Use ngSwitch -->
+                        <a *ngIf="!task.Done" class="btn changeState"  >
                             <i class="fa fa-check-square"></i> Mark done
                         </a>
-                        <b *ngIf="!task.Done" style="text-decoration:none !important"><i class="fa fa-music"></i> Nice job</b>
-                        <a *ngIf="!task.Done && !task.Urgent && !task.Critical" href=""
+                        <b *ngIf="task.Done" style="text-decoration:none !important"><i class="fa fa-music"></i> Nice job</b>
+                        <a *ngIf="!task.Done && !task.Urgent && !task.Critical"
                             class="btn">
                             <i class="fa fa-adjust"></i> Postpone
                         </a>
@@ -57,6 +58,6 @@
         </table>
     </div>
     
-    <task-planning [Model]= "data.OtherTasks" [IsWorkingDayOver]="data.IsWorkingDayOver" ></task-planning>
+    <task-planning [Model]= "data.OtherTasks" [IsWorkingDayOver]="data.IsWorkingDayOver" (planTaskForCurrentDayResponseEvent)="handleResponseEvent($event)" ></task-planning>
     
 </div>
