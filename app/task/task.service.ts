@@ -39,4 +39,12 @@ export class TaskService extends BaseService {
             .catch(super.handleError);
     }
     
+    /**
+     * Plan a task for current day
+     */
+    planTaskForCurrentDay(taskId:number){
+         return this.http.get(AppRouteConst.PLAN_FOR_CURRENT_DAY_TASK+"?id="+taskId, this.getReqOptions())
+            .map(res => <any> res.json())
+            .catch(super.handleError);
+    }
 }

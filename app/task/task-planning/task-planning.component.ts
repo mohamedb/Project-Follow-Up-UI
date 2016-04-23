@@ -9,5 +9,7 @@ export class TaskPlanningComponent implements OnInit {
     @Input("IsWorkingDayOver") IsWorkingDayOver;
     constructor() { }
     ngOnInit() { }
-
+    planTaskForCurrentDay(taskId:number){
+        
+    }
 }

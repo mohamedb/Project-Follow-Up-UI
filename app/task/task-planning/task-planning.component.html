@@ -13,13 +13,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="#task of Model?.CurrentTasks">
+                <tr *ngFor="#task of Model">
                     <td> {{task.Title}}</td>
                     <td> {{task.KeyFactor}}</td>
                     <td> {{task.AddAt}}</td>
                     <td> {{task.EstimatedTimeInMinutes/60}} Hour(s)</td>
                     <td>
-                        <a href="">
+                        <a href="" (click)="planTaskForCurrentDay(task.id)" >
                             <i class="fa fa-check-square"></i> Plan for today
                         </a>
                     </td>
