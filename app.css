@@ -1,7 +1,15 @@
 body{
     font-family: 'Source Sans Pro', sans-serif !important;
     color: #000000;
+    padding: 0px !important ;
+    background: whitesmoke !important;
 }
+#wrapper {
+    height: 100%;
+    overflow: scroll;
+    width: 100%;
+}
+ 
 .text-muted {
     color: #000000 !important;
 }
@@ -20,8 +28,8 @@ body{
 }
 list-projects{ padding: 1px;} 
 .app-main-container{
-        max-height: 85%;
-        overflow-y: scroll;
+      /*  max-height: 85%;
+        overflow-y: scroll; */
 }
 
 .timeline:before {
@@ -68,4 +76,10 @@ a:hover {
     cursor: pointer;
     color: #0A88EC;
     border-color: rgba(33, 150, 243, 0.45);
+}
+
+.card-box {
+    padding: 10px;
+    border-radius: 0px;
+    margin-bottom: 10px;
 }

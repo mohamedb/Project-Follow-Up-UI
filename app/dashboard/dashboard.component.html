@@ -25,7 +25,8 @@
     <matrix [matrixData]="matrix"></matrix>
     
     <current-day-tasks [CurrentDayTasks]= "data.CurrentTasks" 
-                       [Title]="'Current day tasks'" >
+                       [Title]="'Current day tasks'"
+                       (markTaskDoneResponseEvent)="handleResponseEvent($event)" >
     </current-day-tasks>
      
     
