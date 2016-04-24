@@ -22,5 +22,10 @@ export class CurrentDayTasksComponent implements OnInit {
     handleMarkTaskDoneResponse(res:any){
         this.markTaskDoneResponseEvent.emit(res);
     }
+    postpone(taskId:number){
+        this.taskService.postpone(taskId).subscribe(
+          res=>  this.handleMarkTaskDoneResponse(res)
+        )
+    }
 
 }

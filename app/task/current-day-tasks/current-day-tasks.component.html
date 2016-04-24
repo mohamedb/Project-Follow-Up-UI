@@ -23,7 +23,7 @@
                     </a> 
  
                     <b *ngIf="task.Done" style="text-decoration:none !important"><i class="fa fa-music"></i> Nice job</b>
-                    <a *ngIf="!task.Done && !task.Urgent && !task.Critical" class="btn">
+                    <a *ngIf="!task.Done && !task.Urgent && !task.Critical" (click)="postpone(task.Id)" class="btn">
                         <i class="fa fa-adjust"></i> Postpone
                     </a>
                 </td>

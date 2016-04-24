@@ -32,11 +32,12 @@ export class AppRouteConst {
     static GET_TASK = AppRouteConst.BASE_URL + "/TaskApi/Get";
     static TASKBOARD_TASK = AppRouteConst.BASE_URL + "/TaskApi/Taskboard";
     static PLAN_FOR_CURRENT_DAY_TASK = AppRouteConst.BASE_URL + "/TaskApi/PlanTaskForCurrentDay";
-    //Supprot GET && POST
     static ADD_TASK = AppRouteConst.BASE_URL + "/TaskApi/Add"; 
     static CHANGE_STATE_TASK = AppRouteConst.BASE_URL + "/TaskApi/ChangeTaskState"; 
+    static POSTPONE_TASK = AppRouteConst.BASE_URL + "/TaskApi/Postpone"; 
+    
     /**
-     * Task routes 
+     * Timeline routes 
      */
     static BYPROJECT_TIMELINE = AppRouteConst.BASE_URL + "/TimelineApi/ByProject";
     

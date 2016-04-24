@@ -53,4 +53,13 @@ export class TaskService extends BaseService {
             .map(res => <any> res.json())
             .catch(super.handleError);
     }
+    
+    /**
+     * Postpone a task
+     */
+    postpone(taskId:number){
+         return this.http.get(AppRouteConst.POSTPONE_TASK+"?id="+taskId, this.getReqOptions())
+            .map(res => <any> res.json())
+            .catch(super.handleError);
+    }
 }

@@ -1,4 +1,7 @@
 <div class="row">
+    <a (click)="ngOnInit()" class="btn a-btn-default pull-right"  >
+        Refresh <i class="fa fa-refresh"></i>
+    </a><br>
     <b> Done today! </b>
     <div class="card-box">
         <table class="table  table-bordered m-0 " *ngIf="testArray(data.TodayDoneTasks)">
