@@ -20,8 +20,8 @@
                     <td> {{task.AddAt}}</td>
                     <td> {{task.EstimatedTimeInMinutes/60}} Hour(s)</td>
                     <td>
-                        <a  (click)="planTaskForCurrentDay(task.Id)" >
-                            <i class="fa fa-check-square"></i> Plan for today
+                        <a  (click)="planTaskForCurrentDay(task.Id)" class="btn a-btn-default" >
+                            Plan for today <i class="fa fa-check-square"></i> 
                         </a>
                     </td>
                 </tr>

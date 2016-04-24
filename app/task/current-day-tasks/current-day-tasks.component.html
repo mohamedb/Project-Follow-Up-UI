@@ -18,9 +18,10 @@
                 </td>
                 <td>
                     <!-- Use ngSwitch -->
-                    <a *ngIf="!task.Done" class="btn changeState">
-                        <i class="fa fa-check-square"></i> Mark done
-                    </a>
+                    <a *ngIf="!task.Done" class="btn a-btn-default" (click)="markDone(task.Id)">
+                         Mark done <i class="fa fa-check-square"></i>
+                    </a> 
+ 
                     <b *ngIf="task.Done" style="text-decoration:none !important"><i class="fa fa-music"></i> Nice job</b>
                     <a *ngIf="!task.Done && !task.Urgent && !task.Critical" class="btn">
                         <i class="fa fa-adjust"></i> Postpone

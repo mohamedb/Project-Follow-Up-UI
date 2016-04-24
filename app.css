@@ -59,3 +59,13 @@ a:hover {
     margin-top: 29px;
     transform: rotate(-58deg);
 }
+.a-btn-default{
+    background-color: rgba(218, 230, 236, 0.09);
+    border-color: rgba(218, 230, 236, 0.5);
+    padding: 1px 6px 2px 6px;
+}
+.a-btn-default:hover{
+    cursor: pointer;
+    color: #0A88EC;
+    border-color: rgba(33, 150, 243, 0.45);
+}
