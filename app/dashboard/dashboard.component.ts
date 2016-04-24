@@ -2,11 +2,12 @@ import { Component, OnInit } from 'angular2/core';
 import { DashboardService} from './dashboard.service';
 import {MatrixComponent } from './matrix/matrix.component';
 import {TaskPlanningComponent} from './../task/task-planning/task-planning.component';
+import {CurrentDayTasksComponent} from './../task/current-day-tasks/current-day-tasks.component';
 
 @Component({
     selector: 'dashboard',
     templateUrl: 'app/dashboard/dashboard.component.html',
-    directives: [MatrixComponent,TaskPlanningComponent],
+    directives: [MatrixComponent,TaskPlanningComponent,CurrentDayTasksComponent],
     providers: [DashboardService]
 })
 export class DashboardComponent implements OnInit {

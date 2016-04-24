@@ -1,0 +1,32 @@
+<b>{{Title}}</b>
+<div class="card-box">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Title</td>
+                <td>Duration</td>
+                <td>Start</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="#task of CurrentDayTasks" [ngClass]="{'done': task.Done}">
+                <td> {{task.Title}}</td>
+                <td> {{task.EstimatedTimeInMinutes / 60}} Hour(s)</td>
+                <td>
+                    <span style="color:red;">{{task.TaskPlanningStatus}}</span>
+                </td>
+                <td>
+                    <!-- Use ngSwitch -->
+                    <a *ngIf="!task.Done" class="btn changeState">
+                        <i class="fa fa-check-square"></i> Mark done
+                    </a>
+                    <b *ngIf="task.Done" style="text-decoration:none !important"><i class="fa fa-music"></i> Nice job</b>
+                    <a *ngIf="!task.Done && !task.Urgent && !task.Critical" class="btn">
+                        <i class="fa fa-adjust"></i> Postpone
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

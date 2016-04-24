@@ -10,6 +10,7 @@ import {TaskService} from './../task.service';
 export class TaskPlanningComponent implements OnInit {
     @Input("Model") Model;
     @Input("IsWorkingDayOver") IsWorkingDayOver;
+    @Input("Title") Title;
     @Output("planTaskForCurrentDayResponseEvent") planTaskForCurrentDayResponseEvent= new EventEmitter();
     
     constructor(private taskService:TaskService) { }

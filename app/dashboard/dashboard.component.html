@@ -1,5 +1,5 @@
 <div class="row">
-    <h4> Done today! </h4>
+    <b> Done today! </b>
     <div class="card-box">
         <table class="table  table-bordered m-0 " *ngIf="testArray(data.TodayDoneTasks)">
             <thead>
@@ -23,41 +23,14 @@
     </div>
     
     <matrix [matrixData]="matrix"></matrix>
-
-    <h4>Current-Day</h4>
-    <div class="card-box">
-        <table class="table">
-            <thead>
-                <tr>
-                    <td>Title</td>
-                    <td>Duration</td>
-                    <td>Start</td>
-                    <td></td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="#task of data.CurrentTasks" [ngClass]="{'done': task.Done}">
-                    <td> {{task.Title}}</td>
-                    <td> {{task.EstimatedTimeInMinutes / 60}} Hour(s)</td>
-                    <td>
-                        <span style="color:red;">{{task.TaskPlanningStatus}}</span>
-                    </td>
-                    <td>
-                        <!-- Use ngSwitch -->
-                        <a *ngIf="!task.Done" class="btn changeState"  >
-                            <i class="fa fa-check-square"></i> Mark done
-                        </a>
-                        <b *ngIf="task.Done" style="text-decoration:none !important"><i class="fa fa-music"></i> Nice job</b>
-                        <a *ngIf="!task.Done && !task.Urgent && !task.Critical"
-                            class="btn">
-                            <i class="fa fa-adjust"></i> Postpone
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
     
-    <task-planning [Model]= "data.OtherTasks" [IsWorkingDayOver]="data.IsWorkingDayOver" (planTaskForCurrentDayResponseEvent)="handleResponseEvent($event)" ></task-planning>
+    <current-day-tasks [CurrentDayTasks]= "data.CurrentTasks" 
+                       [Title]="'Current day tasks'" >
+    </current-day-tasks>
+     
+    
+    <task-planning [Model]= "data.OtherTasks" [IsWorkingDayOver]="data.IsWorkingDayOver"
+                   [Title]="'Other tasks waiting'" (planTaskForCurrentDayResponseEvent)="handleResponseEvent($event)" >
+    </task-planning>
     
 </div>
