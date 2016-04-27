@@ -1,5 +1,5 @@
 <div class="row">
-
+    <model-state [modelState]="modelState"></model-state>
     <div class="col-md-6">
         <div class="form-group">
             <label for="title">Title</label>
@@ -35,7 +35,7 @@
             </label>
         </div>
     </div>
-    
+
     <div class="col-md-4">
         <div class="checkbox checkbox-custom">
             <input [(ngModel)]="taskModel.KeyFactor" type="checkbox">
@@ -51,7 +51,7 @@
             <textarea [(ngModel)]="taskModel.Description" class="form-control" placeholder="Some words about this awesome task"></textarea>
         </div>
     </div>
-     <div class="col-md-6">
+    <div class="col-md-6">
         <div class="form-group">
             <label for="assign">Estimated time</label>
             <select class="form-control" [(ngModel)]="taskModel.EstimatedTimeInMinutes">
@@ -78,14 +78,5 @@
         </div>
     </div>
 </div>
-
 <button type="submit" (click)="save()" class="btn btn-success waves-effect waves-light">Save</button>
-
-<!-- {{taskModel|json}} -->
-
-<br>
-<hr>
-<br>
-<div style="color:red">
-    {{errorsOnSave|json}}
-</div>
+ 

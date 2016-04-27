@@ -2,19 +2,22 @@ import {Component, OnInit, Input} from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
 import {TaskService} from './../task.service';
 import {TaskModel} from './../task.model';
+import {ModelStateComponent} from './../../shared/model-state/model-state.component';
+import {ModelState} from './../../shared/model-state/model-state.model';
 @Component({
     selector: 'task-form',
     templateUrl: 'app/task/task-form/task-form.component.html',
+    directives: [ModelStateComponent],
     providers: [TaskService],
 })
 
 export class TaskFormComponent implements OnInit {
     taskModel: TaskModel = new TaskModel();
-    errorsOnSave:any = {};
+    modelState: ModelState = new ModelState();
+    errorsOnSave: any = {};
     constructor(private taskService: TaskService, private routeParams: RouteParams) {
 
     }
-
     ngOnInit() {
         let projectId = +this.routeParams.get('projectId');
         this.taskService.getTaskModel(projectId).subscribe(
@@ -24,20 +27,13 @@ export class TaskFormComponent implements OnInit {
     handleResponse(response) {
         this.taskModel = response;
     }
-
     save() {
         this.taskService.saveTaskModel(this.taskModel).subscribe(
             response => this.handleSaveResponse(response),
-            error =>alert("Error! cant save the task *__* ")
+            error => alert("Error! cant save the task *__* ")
         );
     }
-    handleSaveResponse(response){
-        if(response.State==0  )  {
-            this.errorsOnSave=response;
-        }
-        else {
-            alert("OK!")
-        }
-        this.errorsOnSave=response;
+    handleSaveResponse(response) {
+        this.modelState = <ModelState>response;
     }
 }

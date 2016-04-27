@@ -28,13 +28,9 @@ export class DashboardComponent implements OnInit {
         this.matrix=res.MatrixVM;
     }
     handleResponseEvent(response){
-         this.modelState= <ModelState>response;
-        if(response.State==1  )  {
-          
+        this.modelState= <ModelState>response; //this trigger the change in the UI
+        if(this.modelState.State ==1  )  {
             this.ngOnInit(); //reload 
-        }
-        else {
-            alert(response.Message);
         }
     }
 
