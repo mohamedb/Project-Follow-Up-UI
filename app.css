@@ -86,3 +86,7 @@ a:hover {
 tbody {
     color: black;
 }
+
+.alert-error {
+        background: #FFEB3B;
+}
