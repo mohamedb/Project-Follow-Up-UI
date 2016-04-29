@@ -18,6 +18,12 @@ export class NotificationService extends BaseService {
             .map(res => <any> res.json())
             .catch(super.handleError);
     }
+    
+    markSeenUnseen(notifId:number){
+          return this.http.get(AppRouteConst.SEEN_UNSEEN_NOTIFICATION+"?id="+notifId, this.getReqOptions())
+            .map(res => <any> res.json())
+            .catch(super.handleError);
+    }
 
     
 }

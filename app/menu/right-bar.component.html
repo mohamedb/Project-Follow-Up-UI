@@ -9,10 +9,12 @@
         <ul class="list-group list-no-border user-list">
             <li *ngFor="#notif of notifications" class="list-group-item">
                 <a href="#" class="user-list-item">
+                    <i class="btn-notif-seen pull-right"
+                       (click)="markSeenUnseen(notif.Id)"
+                       [ngClass]="{'fa fa-toggle-off':notif.Seen, 'fa fa-toggle-on':!notif.Seen}" > </i>
                     <div class="icon bg-warning">
                         <i class="zmdi zmdi-settings"></i>
                     </div>
-
                     <div class="user-desc">
                         <span class="name">Med Bllz</span>
                         <span class="desc">{{notif.Message}}</span>
