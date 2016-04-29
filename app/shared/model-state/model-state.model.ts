@@ -7,6 +7,9 @@
  *  List<SimpleKeyValue<string, string>> ErrorMessages
  */
 export class ModelState {
+    /**
+     * Flag if ==1 model is valid else not valid
+     */
     State:number;
     SuccessMessages:Array<any>=[];
     ErrorMessages:Array<any>=[];

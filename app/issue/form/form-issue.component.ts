@@ -2,15 +2,18 @@ import {Component, OnInit} from 'angular2/core';
 import {IssueModel} from './../issue.model';
 import {IssueService} from './../issue.service';
 import {RouteParams, Router} from 'angular2/router';
-
+import {ModelStateComponent} from './../../shared/model-state/model-state.component';
+import {ModelState} from './../../shared/model-state/model-state.model';
 @Component({
     selector: 'form-issue',
     templateUrl: 'app/issue/form/form-issue.component.html',
-    providers:[IssueService]
+    directives: [ModelStateComponent],
+    providers: [IssueService]
 })
 
 export class FormIssueComponent implements OnInit {
     issueModel: IssueModel = new IssueModel();
+    modelState: ModelState = new ModelState();
     constructor(private issueService: IssueService, private routeParams: RouteParams) { }
 
     ngOnInit() {
@@ -20,7 +23,7 @@ export class FormIssueComponent implements OnInit {
         )
     }
     handleGetModelResponse(res) {
-        this.issueModel =  res;
+        this.issueModel = res;
     }
 
     save() {
@@ -29,13 +32,12 @@ export class FormIssueComponent implements OnInit {
         );
     }
     handleSaveResponse(res) {
-        if (res.State == 1) {
+        this.modelState= <ModelState> res
+        if (this.modelState.State == 1) {
             alert(res.Message);
             this.issueService.goToProjects();/* @todo redirect to issues list */
         }
-        else {
-            alert("Some errors occured\n: " + res.Message);
-        }
+       
 
     }
 }

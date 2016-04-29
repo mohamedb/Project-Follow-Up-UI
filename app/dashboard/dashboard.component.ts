@@ -14,7 +14,7 @@ import {ModelState} from './../shared/model-state/model-state.model';
 export class DashboardComponent implements OnInit {
     data: any = {};
     matrix:any;
-     modelState:ModelState=new ModelState();
+    modelState: ModelState = new ModelState();
     constructor(private dashboardService: DashboardService) { }
 
     ngOnInit() {
