@@ -94,14 +94,33 @@ tbody {
     color: #000000;
     font-size: 14px;
 }
+/**
+This value have to "correlate with the value in .side-bar.right-bar"
+*/
 .side-bar {
-    width: 45%;
+    width: 35%;
 }
 .side-bar.right-bar {
-    right: -45%;
+    right: -35%;
 }
 .user-list .user-list-item .icon i {
     color: black;
     line-height: 45px;
     font-size: 21px;
+}
+/**
+ Level of notifs:
+ Info = 0;  Warning = 1;  Danger = 2; Success = 3;
+*/
+.level-0{
+ color: mediumblue !important;
+}    
+.level-1{
+ color: #FF9800 !important;
+}
+.level-2{
+  color: #FF3939 !important;
+}
+.level-3{
+ color: green !important;
 }

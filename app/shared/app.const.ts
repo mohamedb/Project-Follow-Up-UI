@@ -25,7 +25,7 @@ export class AppRouteConst {
      * Notification routes 
      */
     static LIST_NOTIFICATION = AppRouteConst.BASE_URL + "/NotificationApi/all";
-    static SEEN_UNSEEN_NOTIFICATION = AppRouteConst.BASE_URL + "/NotificationApi/flip";
+    static SEEN_UNSEEN_NOTIFICATION = AppRouteConst.BASE_URL + "/NotificationApi/SeenUnseen";
     
 
     /**

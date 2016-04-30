@@ -21,9 +21,12 @@ export class RightBarComponent implements OnInit {
      }
      markSeenUnseen(notifId:number){
          this.notificationService.markSeenUnseen(notifId).subscribe(
-             res=> alert("success ?"+res),
-             err=> confirm("Did you imlplemente yet the func?")
+             res=> this.handleSeenUnseenResponse(res),
+             err=> confirm("Server error")
          )
+     }
+     handleSeenUnseenResponse(res:any){
+         this.ngOnInit();
      }
      handleResponse(res:any){
          this.notifications=res;
