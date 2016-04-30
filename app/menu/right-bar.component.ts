@@ -32,6 +32,15 @@ export class RightBarComponent implements OnInit {
          this.notifications=res;
          
      }
+     markDeleted(notifId:number){
+         this.notificationService.markDeleted(notifId).subscribe(
+             res=>this.handleMarkDeletedResponse(res),
+             err=>console.log(err)
+         )
+     }
+     handleMarkDeletedResponse(res:any){
+        this.ngOnInit();
+    }
      flipNotifs(){
          console.log("flip cliked V:"+ this.showNotifs);
           this.flipNotifBarEvent.emit(this.showNotifs);

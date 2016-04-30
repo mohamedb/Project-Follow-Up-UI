@@ -124,3 +124,20 @@ This value have to "correlate with the value in .side-bar.right-bar"
 .level-3{
  color: green !important;
 }
+
+.user-list .user-list-item .user-desc {
+    margin-left: 3px;  
+    height: 67px;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 5px 5px 10px 5px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.user-list .user-list-item .user-desc span.desc {
+    text-overflow: ellipsis;
+    white-space: normal;
+}

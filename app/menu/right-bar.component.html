@@ -1,5 +1,5 @@
 <!-- Right Sidebar -->
-<div class="side-bar right-bar">
+<div class="side-bar right-bar" style="max-height: 99%; overflow: auto;">
     <a  (click)="flipNotifs()" class="right-bar-toggle">
         <i class="zmdi zmdi-close-circle-o"></i>
     </a>
@@ -9,7 +9,12 @@
         <ul class="list-group list-no-border user-list">
             <li *ngFor="#notif of notifications" class="list-group-item">
                 <span href="#" class="user-list-item">
-                   
+                    <i class=" pull-right zmdi zmdi zmdi-close" 
+                       style=" cursor: pointer;font-size: 15px;color: #FF5722; margin-left: 10px; font-weight: 600;"
+                       title="Delete!"
+                       (click)="markDeleted(notif.Id)" > 
+                    </i>
+                    
                     <i *ngIf="!notif.Seen"
                        class=" pull-right zmdi zmdi-notifications-active " style="cursor:pointer;font-size: 15px; color: #4F636D;"
                        title="Mark seen/unseen"
@@ -21,23 +26,19 @@
                        class=" pull-right zmdi zmdi-notifications-paused " style="cursor:pointer;font-size: 15px; color: #4F636D;"
                        title="Mark seen/unseen"
                        (click)="markSeenUnseen(notif.Id)" > 
-                       
                     </i>
                     
-                    <span style="margin-top: -4px; margin-right: 6px; color: red;font-size: 13px;" 
+                    <span style="margin-top: -4px; margin-right: 6px; color: red;font-size: 12px;" 
                           class="time pull-right">{{notif.TimeAgo}}</span>
-                    <div class="icon">
-                        <div [ngSwitch]="notif.Level">
+                    <div class="user-desc">
+                         <div [ngSwitch]="notif.Level">
                             <template [ngSwitchWhen]="0"> <i class="zmdi zmdi-info-outline level-0"></i> </template>
                             <template [ngSwitchWhen]="1"> <i class="zmdi zmdi-alert-polygon level-1"></i> </template>
                             <template [ngSwitchWhen]="2"> <i class="zmdi zmdi-alert-polygon level-2"></i> </template>
                             <template [ngSwitchWhen]="3"> <i class="zmdi zmdi-check level-3"></i> </template>
                             <template ngSwitchDefault><i class="zmdi zmdi-info-outline"></i></template>
                         </div>
-                    </div>
-                    <div class="user-desc">
                         <span class="desc">{{notif.Message}}</span>
-                        
                     </div>
                 </span>
             </li>

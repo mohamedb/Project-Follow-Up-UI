@@ -24,6 +24,13 @@ export class NotificationService extends BaseService {
             .map(res => <any> res.json())
             .catch(super.handleError);
     }
+    
+    markDeleted(notifId:number){
+          return this.http.get(AppRouteConst.MARK_DELETED_NOTIFICATION+"?id="+notifId, this.getReqOptions())
+            .map(res => <any> res.json())
+            .catch(super.handleError);
+    }
+    
 
     
 }
