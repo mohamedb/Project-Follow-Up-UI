@@ -90,3 +90,18 @@ tbody {
 .alert-error {
         background: #FFEB3B;
 }
+.user-list .user-list-item .user-desc span.desc {
+    color: #000000;
+    font-size: 14px;
+}
+.side-bar {
+    width: 45%;
+}
+.side-bar.right-bar {
+    right: -45%;
+}
+.user-list .user-list-item .icon i {
+    color: black;
+    line-height: 45px;
+    font-size: 21px;
+}

@@ -8,19 +8,28 @@
     <div class="notification-list nicescroll">
         <ul class="list-group list-no-border user-list">
             <li *ngFor="#notif of notifications" class="list-group-item">
-                <a href="#" class="user-list-item">
-                    <i class="btn-notif-seen pull-right"
+                <span href="#" class="user-list-item">
+                   
+                    <i class="btn-notif-seen pull-right" style="cursor:pointer;font-size: 15px;"
                        (click)="markSeenUnseen(notif.Id)"
-                       [ngClass]="{'fa fa-toggle-off':notif.Seen, 'fa fa-toggle-on':!notif.Seen}" > </i>
-                    <div class="icon bg-warning">
-                        <i class="zmdi zmdi-settings"></i>
+                       [ngClass]="{'zmdi zmdi-notifications-off':notif.Seen, 'zmdi zmdi-notifications-active':!notif.Seen}" > 
+                    </i>
+                     <span style="margin-top: -4px; margin-right: 6px; color: red;font-size: 13px;" 
+                           class="time pull-right">{{notif.TimeAgo}}</span>
+                    <div class="icon">
+                        <div [ngSwitch]="notif.Level">
+                            <template [ngSwitchWhen]="0"> <i class="zmdi zmdi-info-outline"></i> </template>
+                            <template [ngSwitchWhen]="1"> <i class="zmdi zmdi-help-outline"></i> </template>
+                            <template [ngSwitchWhen]="2"> <i class="zmdi zmdi-alert-polygon"></i> </template>
+                            <template [ngSwitchWhen]="3"> <i class="zmdi zmdi-check"></i> </template>
+                            <template ngSwitchDefault><i class="zmdi zmdi-info-outline"></i></template>
+                        </div>
                     </div>
                     <div class="user-desc">
-                        <span class="name">Med Bllz</span>
                         <span class="desc">{{notif.Message}}</span>
-                        <span class="time">{{notif.TimeAgo}}</span>
+                        
                     </div>
-                </a>
+                </span>
             </li>
         </ul>
     </div>
