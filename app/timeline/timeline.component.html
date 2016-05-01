@@ -36,9 +36,7 @@
             </article>
               <article *ngFor="#element of OneMonthAgoElements" class="timeline-item" [ngClass]= "{'alt':element.Id%2}">
                 <div class="timeline-desk">
-                    <div class="panel">
                         <timeline-item [element]="element"></timeline-item>
-                    </div>
                 </div>
             </article>
 

@@ -50,8 +50,7 @@ list-projects{ padding: 1px;}
     width: 20px;
 }
  .router-link-active, .router-link-active:hover  {
-        color: #FFFDFD !important;
-    background-color: #71B6F9;
+    color: #F44336 !important;
 }
 a:hover {
     cursor: pointer;
@@ -141,3 +140,23 @@ This value have to "correlate with the value in .side-bar.right-bar"
     text-overflow: ellipsis;
     white-space: normal;
 }
+/*
+#wrapper.enlarged .left.side-menu #sidebar-menu > ul > li > a:hover {
+    background: #3F51B5 !important;
+}
+#wrapper.enlarged .left.side-menu #sidebar-menu ul > li:hover > a {
+    color: #FFFFFF;
+    border-color: #f4f8fb;
+    background: #3F51B5;
+}
+
+#wrapper.enlarged .left.side-menu #sidebar-menu ul > li:hover > ul a {
+    background: rgb(63, 81, 181);
+    box-shadow: none;
+    padding-left: 15px;
+    position: relative;
+    width: 186px;
+    z-index: 6;
+    color: white;
+}
+*/
