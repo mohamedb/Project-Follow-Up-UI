@@ -14,9 +14,9 @@ import {ModelState} from './model-state.model';
                 {{errMsg.Value}}
             </p>
             <p class="m-t-10" *ngIf="modelState.Message">
-                <button type="button" (click)="hide()" class="btn waves-effect waves-light">
+                <a (click)="hide()" class="btn  a-btn-red">
                    Close
-                </button>
+                </a>
             </p>
         </div>
      `
