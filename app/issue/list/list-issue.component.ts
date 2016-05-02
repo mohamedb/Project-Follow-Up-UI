@@ -33,6 +33,12 @@ export class ListIssueComponent implements OnInit {
         this.modelState=<ModelState>res;
         this.ngOnInit();
     }
+     genetateTaskFromIssue(issueId:number){
+         this.issueService.genetateTaskFromIssue(issueId).subscribe(
+             res=>alert(res.Id),
+             err=>alert("Error transforming issue to new task")
+         );
+     }
     handleResponse(response:any){
         this.Issues= response;
     }

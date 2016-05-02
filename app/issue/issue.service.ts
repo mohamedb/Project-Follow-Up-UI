@@ -39,5 +39,11 @@ export class IssueService extends BaseService {
             .map(res => <any>res.json())
             .catch(super.handleError);
     }
+    
+    genetateTaskFromIssue(issueId:number){
+         return this.http.get(AppRouteConst.GENERATE_TASK_FROM_ISSUE_TASK + "?id=" + issueId, this.getReqOptions())
+            .map(res => <any>res.json())
+            .catch(super.handleError);
+    }
 
 }
