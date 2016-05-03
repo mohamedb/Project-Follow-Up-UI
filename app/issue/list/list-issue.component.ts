@@ -9,7 +9,7 @@ import {ModelStateComponent} from './../../shared/model-state/model-state.compon
     directives: [ROUTER_DIRECTIVES,ModelStateComponent],
     providers: [IssueService]
 })
-
+ 
 export class ListIssueComponent implements OnInit {
     Issues:Array<any>=[];
     projectId:number=0;

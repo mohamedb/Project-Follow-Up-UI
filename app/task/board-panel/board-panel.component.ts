@@ -20,15 +20,7 @@ export class BoardPanelComponent implements OnInit {
          )
      }
      handleChangeStateResponse(response){
-         if(response.State==1){
-             alert("State Change successfully");
-             this.ngOnInit(); //Simulate reload!
-             this.notifyEvent.emit(response);
-         }
-         else{
-             alert("Errors occurs while changing task state!");
-             console.log(response);
-         }
+       this.notifyEvent.emit(response);
      }
     ngOnInit() { }
 }
