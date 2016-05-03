@@ -36,5 +36,8 @@ export class ModelStateComponent implements OnInit {
     hide(){
        this.modelState= new ModelState();
     }
+    goToTop(){
+         $('html, body').animate({scrollTop : 0},800);
+    }
 
 }
