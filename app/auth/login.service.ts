@@ -28,9 +28,9 @@ export class LoginService  {
         console.log("Some problem from the server :/ ! "+error);
         return Observable.throw(error.json().error || 'Server error');
     }
-     goToProjects(){
-         console.log("Go to project from loginFrom cmp");
-         let link= ['/BaseApp','Projects',{}];
+     goToHome(){
+         console.log("Try redirection to App/Dashboard");
+         let link= ['/BaseApp','Dashboard',{}];
          this.router.navigate(link);
     }
     logout(){

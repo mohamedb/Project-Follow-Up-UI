@@ -35,7 +35,7 @@ export class LoginFormComponent implements OnInit {
             localStorage.setItem("auth", auth);
             let user = JSON.stringify(response);
             localStorage.setItem("user", user);
-            this.loginService.goToProjects();
+            this.loginService.goToHome();
      }
     
     handleError(err:any){

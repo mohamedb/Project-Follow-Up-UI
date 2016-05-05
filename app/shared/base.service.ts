@@ -58,9 +58,9 @@ export class BaseService {
         let options = new RequestOptions({ headers: headers });
         return options
     }
-     goToProjects(){
-         console.log("Try redirection to App/projects");
-         let link= ['/BaseApp','Projects',{}];
+     goToHome(){
+         console.log("Try redirection to App/Dashboard");
+         let link= ['/BaseApp','Dashboard',{}];
          this.router.navigate(link);
     }
     logout(){

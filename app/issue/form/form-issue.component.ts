@@ -35,7 +35,7 @@ export class FormIssueComponent implements OnInit {
         this.modelState= <ModelState> res
         if (this.modelState.State == 1) {
             alert(res.Message);
-            this.issueService.goToProjects();/* @todo redirect to issues list */
+            this.issueService.goToHome();/* @todo redirect to issues list */
         }
        
 

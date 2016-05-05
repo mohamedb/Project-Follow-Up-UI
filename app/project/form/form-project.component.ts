@@ -36,7 +36,7 @@ export class FormProjectComponent implements OnInit {
     handleSaveResponse(res) {
         if (res.State == 1) {
             alert("Project saved successfully");
-            this.projetService.goToProjects();
+            this.projetService.goToHome();
         }
         this.modelState = <ModelState>res;
     }
