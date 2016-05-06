@@ -157,3 +157,14 @@ This value have to "correlate with the value in .side-bar.right-bar"
 textarea.form-control {
     min-height: 120px;
 }
+.form-control {
+    background-color: #FFFFFF;
+    border: 1px solid #CFD8DC;
+    border-radius: 0px;
+    color: #565656;
+    font-size: 15px;
+}
+.form-control:focus {
+    background-color: rgba(236, 239, 241, 0.19);
+    border: 1px solid #188AE2;
+}

@@ -16,11 +16,12 @@ export class ProjectModel {
     Objective: string = `   `;
 
     constructor() {
-        this.Benifite = `Wouldn't say this and too far out of subject, the most usual context would be "I'm gonna kill you" "I'll kill you." But again, it's so context based, it's not going to be translated as that in every situation. 
-                        It's a pretty heated thing to say and sometimes they'll inflect even more "passion" into it with that little bu- prefix which kind of adds strength into the following verb. (like the internet favorite,  
-                        emphasis leaves you with something for another discussion entirely.)`;
+        this.Benifite = `Greatest properly off ham exercise all. Unsatiable invitation its possession nor off. 
+                         All difficulty estimating unreserved increasing the solicitude. 
+                          departure end bed attention unfeeling. On unpleasing principles alteration of.
+                           Be at performed preferred determine `;
         this.Objective = `I had a lot more to say and a lot more examples, but this went on way longer than I expected already. Perhaps I'll revisit this topic at a future date, as I know it's one that's constantly being addressed.
-                            Until then, from me and the crew here at mangastream, thanks as always for your readership and we hope to continue to bring you timely scanlations of the highest quality we can muster for the forseeable future!)`;
+                          nd we hope to continue to bring you timely scanlations of the highest quality we can muster for the forseeable future!)`;
     }
 
 }
