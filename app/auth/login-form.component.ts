@@ -19,7 +19,7 @@ export class LoginFormComponent implements OnInit {
     };
     loginError="";
     constructor(private loginService: LoginService, private router: Router) {
-        console.log("Login-form loaded!");
+      //  console.log("Login-form loaded!");
      }
     ngOnInit() {
        

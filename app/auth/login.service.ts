@@ -22,7 +22,7 @@ export class LoginService  {
         let options = new RequestOptions({ headers: headers });
         return this.http.post(AppRouteConst.CHECK_CREDENTIALS, body, options)
             .map(res => <any> res.json())
-          //  .catch(this.handleError); let the component handle error and do some dome manipulations 
+          //  .catch(this.handleError); let the component handle error and do some dom manipulations 
     }
      protected handleError(error: Response) {
         console.log("Some problem from the server :/ ! "+error);
