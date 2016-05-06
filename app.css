@@ -153,4 +153,7 @@ This value have to "correlate with the value in .side-bar.right-bar"
     text-overflow: ellipsis;
     white-space: normal;
 }
- 
+
+textarea.form-control {
+    min-height: 120px;
+}

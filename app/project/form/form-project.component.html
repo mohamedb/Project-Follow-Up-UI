@@ -1,74 +1,37 @@
-<div class="card-box p-b-0">
+<div class="row">
     <model-state [modelState]="modelState"></model-state>
-    <div class="dropdown pull-right">
-        <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-            <i class="zmdi zmdi-more-vert"></i>
-        </a>
-        <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-        </ul>
-    </div>
-
     <h4 class="header-title m-t-0 m-b-30">Add/Edit project wizard</h4>
-
-    <div id="progressbarwizard" class="pull-in">
-        <ul class="nav nav-tabs navtab-wizard nav-justified bg-muted">
-            <li class="active"><a href="#account-2" data-toggle="tab" aria-expanded="true">General</a></li>
-            <li class=""><a href="#profile-tab-2" data-toggle="tab" aria-expanded="false">Time</a></li>
-        </ul>
-
-        <div class="tab-content b-0 m-b-0">
-            <div id="bar" class="progress progress-striped progress-bar-primary-alt">
-                <div class="bar progress-bar progress-bar-primary" style="width: 33.3333%;"></div>
+    <div class="card-box">
+        <div class="form-group clearfix">
+            <label class="col-md-3 control-label " for="projectName">Name *</label>
+            <div class="col-md-9">
+                <input type="text" [(ngModel)]="projectModel.Name" class="form-control" required>
             </div>
-
-            <div class="tab-pane p-t-10 fade active in" id="account-2">
-                <div class="row">
-                    <div class="form-group clearfix">
-                        <label class="col-md-3 control-label " for="projectName">Name *</label>
-                        <div class="col-md-9">
-                            <input type="text" [(ngModel)]="projectModel.Name"   class="form-control"  required     >
-                        </div>
-                    </div>
-                    <div class="form-group clearfix">
-                        <label class="col-md-3 control-label"  > Objective </label>
-                        <div class="col-md-9">
-                            <textarea [(ngModel)]="projectModel.Objective"  class="form-control" ></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group clearfix">
-                        <label class="col-md-3 control-label "  > Benifite </label>
-                        <div class="col-md-9">
-                            <textarea [(ngModel)]="projectModel.Benifite"  class="form-control" ></textarea>
-                        </div>
-                    </div>
-                     
-                </div>
-            </div>
-            <div class="tab-pane p-t-10 fade" id="profile-tab-2">
-                <div class="row">
-                    <div class="form-group clearfix">
-                        <label class="col-lg-2 control-label" for="startAt"> Start At *</label>
-                        <div class="col-lg-10">
-                            <input  type="datetime-local" [(ngModel)]="projectModel.StartAt" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group clearfix">
-                        <label class="col-lg-2 control-label " for="endAt"> End At *</label>
-                        <div class="col-lg-10">
-                            <input type="datetime-local" [(ngModel)]="projectModel.EndAt" class="form-control" required>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary waves-effect waves-light" (click)="save()">Save </button> 
-                </div>
-            </div>
-            
-            
         </div>
+        <div class="form-group clearfix">
+            <label class="col-md-3 control-label"> Objective </label>
+            <div class="col-md-9">
+                <textarea [(ngModel)]="projectModel.Objective" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <label class="col-md-3 control-label "> Benifite </label>
+            <div class="col-md-9">
+                <textarea [(ngModel)]="projectModel.Benifite" class="form-control" cols="10"></textarea>
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <label class="col-md-3 control-label" for="startAt"> Start At *</label>
+            <div class="col-md-9">
+                <input type="datetime-local" [(ngModel)]="projectModel.StartAt" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <label class="col-md-3 control-label " for="endAt"> End At *</label>
+            <div class="col-md-9">
+                <input type="datetime-local" [(ngModel)]="projectModel.EndAt" class="form-control" required>
+            </div>
+        </div>
+        <button class="btn btn-primary waves-effect waves-light" (click)="save()">Save </button>
     </div>
-   
 </div>
