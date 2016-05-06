@@ -1,13 +1,15 @@
 import {Component, OnInit} from 'angular2/core';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} from 'angular2/router';
 import {ProjectService} from "./project.service";
 import {FilterProjectPipe} from "./filter-project.pipe";
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} from 'angular2/router';
+import {FormatLongTextPipe} from "./../shared/long-text.pipe";
+
 @Component({
     selector: 'list-projects',
     templateUrl: 'app/project/list-projects.component.html',
     providers: [ProjectService],
     directives: [ROUTER_DIRECTIVES],
-    pipes: [FilterProjectPipe],
+    pipes: [FilterProjectPipe,FormatLongTextPipe],
     styles: [` `]
 })
 

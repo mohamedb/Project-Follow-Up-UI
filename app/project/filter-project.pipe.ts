@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from 'angular2/core';
-
+ 
 @Pipe({
     name: 'filterProject',
     pure: false
