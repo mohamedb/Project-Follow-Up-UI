@@ -21,7 +21,7 @@ export class TaskboardComponent implements OnInit {
     ngOnInit() {
         let projectId = +this.routeParams.get('projectId');
         this.taskboardService.getTaskboard(projectId).subscribe(
-            resp=>this.Upcoming=resp.Upcoming
+            resp=>this.handleResponse(resp)
         );
      }
      
@@ -29,6 +29,8 @@ export class TaskboardComponent implements OnInit {
          this.Upcoming=response.Upcoming;
          this.Complete= response.Complete;
          this.InProgress= response.InProgress;
+         
+         
      }
       panelUpdated(response){
           this.modelState=response;
