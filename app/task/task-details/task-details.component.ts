@@ -1,6 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {RouteParams,Router} from 'angular2/router';
 import {TaskService} from './../task.service';
+import {DateUtils} from './../../shared/app-date-utils';
 @Component({
     selector: 'task-details',
     templateUrl: 'app/task/task-details/task-details.component.html',
@@ -20,5 +21,9 @@ export class TaskDetailsComponent implements OnInit {
      }
      handleResponse(response){
          this.task=response;
+     }
+     
+     toDate(strDate:string){
+         return DateUtils.toShortFormat(strDate);
      }
 }
