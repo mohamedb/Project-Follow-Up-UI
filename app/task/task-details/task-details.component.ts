@@ -24,6 +24,6 @@ export class TaskDetailsComponent implements OnInit {
      }
      
      toDate(strDate:string){
-         return DateUtils.toShortFormat(strDate);
+         return DateUtils.toFormatDM_Hm(strDate);
      }
 }

@@ -7,21 +7,10 @@ export class DateUtils {
     
     /**
      * to use with datetime-picker
-     * example 7/11/2015 14:50
+     * example: 10 mai 21:00
      */
-    static toFormatDMY_Hi(dateStr: string): string {
-       /* if(!dateStr || dateStr.length<=1){
-            return "";
-        }*/
-        let dateObject = new Date(dateStr);
-        let dateResult = "-";
-        dateResult = dateObject.toLocaleDateString('fr-FR', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-        }).split(' ').join('/') + " " + this.twoDigits(dateObject.getHours()) + ":" + this.twoDigits(dateObject.getMinutes());
-        
-        return dateResult;
+    static toFormatDM_Hm(dateStr: string): string {
+        return moment(dateStr).locale("fr_FR").format("DD MMM  HH:mm");
     }
     
      /**
