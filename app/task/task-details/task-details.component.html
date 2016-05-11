@@ -18,20 +18,15 @@
                     <a href="#"> <img class="media-object img-circle" alt="64x64" src="assets/images/users/avatar-2.jpg" style="width: 48px; height: 48px;">                        </a>
                 </div>
                 <div class="media-body">
-
                     <h4 class="media-heading m-b-0"> {{task.Executor?.Email}} </h4>  
                     <span class="label label-success" [ngClass]="{'label-danger': task.Urgent}">Urgent</span>
                     <span class="label label-success" [ngClass]="{'label-danger': task.Critical}">Critical</span>
                 </div>
             </div>
-
             <h4 class="font-600 m-b-20">{{task.Title}}</h4>
-
             <p class="text-muted">
                 {{task.Description}}
             </p>
- 
-
             <ul class="list-inline task-dates m-b-0 m-t-20">
                 <li>
                     <h5 class="font-600 m-b-5">Start Date</h5>
