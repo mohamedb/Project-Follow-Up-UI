@@ -42,21 +42,24 @@
                     <h5 class="font-600 m-b-5">Due Date</h5>
                     <p> <small class="text-muted">{{toDate(task.EndAt)}}</small></p>
                 </li>
+                <li *ngIf="task.Done">
+                    <h5 class="font-600 m-b-5">Started at</h5>
+                    <p> <small class="text-muted">{{toDate(task.StartAt)}}</small></p>
+                </li>
+                <li *ngIf="task.Done">
+                    <h5 class="font-600 m-b-5">Finished at</h5>
+                    <p> <small class="text-muted">{{toDate(task.FinishAt)}}</small></p>
+                </li>
             </ul>
             <div class="clearfix"></div>
-
-            <div class="task-tags m-t-20">
-                <h5 class="font-600">Tags</h5>
-                <input type="text" value="Amsterdam,Washington,Sydney" data-role="tagsinput" placeholder="add tags" />
-            </div>
-
+ 
             <div class="assign-team m-t-30">
                 <h5 class="font-600 m-b-5">Assign to</h5>
                 <div>
-                    <a href="#"> <img class="img-circle thumb-sm" alt="64x64" src="assets/images/users/avatar-2.jpg"> </a>
-                    <a href="#"> <img class="img-circle thumb-sm" alt="64x64" src="assets/images/users/avatar-3.jpg"> </a>
-                    <a href="#"> <img class="img-circle thumb-sm" alt="64x64" src="assets/images/users/avatar-5.jpg"> </a>
-                    <a href="#"> <img class="img-circle thumb-sm" alt="64x64" src="assets/images/users/avatar-8.jpg"> </a>
+                    <a href="#">
+                         <img class="img-circle thumb-sm" alt="64x64" src="assets/images/users/avatar-2.jpg">
+                         {{ task.Executor?.Name}}:< {{ task.Executor?.Email}} >
+                     </a>
                     <a href="#"><span class="add-new-plus"><i class="zmdi zmdi-plus"></i> </span></a>
                 </div>
             </div>
