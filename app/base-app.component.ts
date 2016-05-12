@@ -65,7 +65,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
     }
     ,
     {
-        path: '/Task/Add/:projectId',
+        path: '/Task/Add/:projectId/:taskId',
         name: 'AddTask',
         component: TaskFormComponent,
     },
