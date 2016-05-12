@@ -76,7 +76,7 @@
             <a *ngIf="!project.Over" [routerLink]="['AddProject',{id: project.Id}]" type="button" class="btn  waves-effect waves-light">
                 <i class="fa fa-edit"></i>Edit
             </a>
-            <a *ngIf="!project.Over" [routerLink]="['AddTask',{projectId: project.Id}]" type="button" class="btn  waves-effect waves-light">
+            <a *ngIf="!project.Over" [routerLink]="['AddTask',{projectId: project.Id,taskId:0}]" type="button" class="btn  waves-effect waves-light">
                 <i class="fa fa-plus"></i> New Task
             </a>
         </div>

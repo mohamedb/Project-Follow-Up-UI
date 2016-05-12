@@ -23,8 +23,8 @@ export class TaskService extends BaseService {
     /**
      * Get initialized instance of model for ADD including additional data
      */
-    getTaskModel(projectId:number){
-        return this.http.get(AppRouteConst.ADD_TASK+"?id="+projectId, this.getReqOptions())
+    getTaskModel(projectId:number,taskId:number){
+        return this.http.get(AppRouteConst.ADD_TASK+"?id="+projectId+"&taskId="+taskId, this.getReqOptions())
             .map(res => <any> res.json())
             .catch(super.handleError);
     }
@@ -34,6 +34,7 @@ export class TaskService extends BaseService {
      */
     saveTaskModel(taskModel:TaskModel){
         let body = JSON.stringify(taskModel);
+        console.log(body);
         return this.http.post(AppRouteConst.ADD_TASK,body, this.getReqOptions())
             .map(res => <any> res.json())
             .catch(super.handleError);

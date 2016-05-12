@@ -20,7 +20,8 @@ export class TaskFormComponent implements OnInit {
     }
     ngOnInit() {
         let projectId = +this.routeParams.get('projectId');
-        this.taskService.getTaskModel(projectId).subscribe(
+        let taskId = +this.routeParams.get('taskId');
+        this.taskService.getTaskModel(projectId,taskId).subscribe(
             response => this.handleResponse(response)
         );
     }
