@@ -168,3 +168,7 @@ textarea.form-control {
     background-color: rgba(236, 239, 241, 0.19);
     border: 1px solid #188AE2;
 }
+
+.timeline-date {
+        color: crimson;
+}
