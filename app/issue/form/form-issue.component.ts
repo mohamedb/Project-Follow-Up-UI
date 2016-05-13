@@ -14,11 +14,12 @@ import {ModelState} from './../../shared/model-state/model-state.model';
 export class FormIssueComponent implements OnInit {
     issueModel: IssueModel = new IssueModel();
     modelState: ModelState = new ModelState();
-    constructor(private issueService: IssueService, private routeParams: RouteParams) { }
+    projectId:number;
+    constructor(private issueService: IssueService, private routeParams: RouteParams,private  router:Router) { }
 
     ngOnInit() {
-        let projectId = +this.routeParams.get('projectId');
-        this.issueService.getFormModel(projectId).subscribe(
+       this.projectId = +this.routeParams.get('projectId');
+        this.issueService.getFormModel(this.projectId).subscribe(
             res => this.handleGetModelResponse(res)
         )
     }
@@ -32,12 +33,8 @@ export class FormIssueComponent implements OnInit {
         );
     }
     handleSaveResponse(res) {
-        this.modelState= <ModelState> res
-        if (this.modelState.State == 1) {
-            alert(res.Message);
-            this.issueService.goToHome();/* @todo redirect to issues list */
-        }
-       
-
+        this.modelState= <ModelState> res;
+        let link =['/BaseApp','ListIssue',{projectId: this.projectId}];
+        this.router.navigate(link);
     }
 }
